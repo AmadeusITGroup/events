@@ -301,7 +301,10 @@ function resolveDisplayStats(stats, live, dateFilter) {
             return { ...stat, number: String(live.speakersCount) };
         }
         if (live && label === 'experts & partners') {
-            return { ...stat, number: String(live.expertsPartnersCount) };
+            const configuredNumber = dateFilter && stat[`number-${dateFilter}`] !== undefined
+                ? stat[`number-${dateFilter}`]
+                : stat.number;
+            return { ...stat, number: configuredNumber };
         }
         if (dateFilter && stat[`number-${dateFilter}`] !== undefined) {
             return { ...stat, number: stat[`number-${dateFilter}`] };
