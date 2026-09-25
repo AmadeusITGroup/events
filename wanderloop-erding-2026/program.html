@@ -137,7 +137,7 @@
             padding: 0.2rem;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
-            width: fit-content;
+            width: 100%;
             max-width: 100%;
         }
         [data-theme="dark"] .view-toggle { background: var(--dark-accent); }
@@ -316,12 +316,13 @@
             border-radius: var(--radius-lg);
             overflow: hidden;
             background: var(--card-bg);
-            width: fit-content;
+            width: 100%;
             max-width: 100%;
         }
         .timeline-scroll {
             overflow-x: auto;
             overflow-y: hidden;
+            width: 100%;
             max-width: 100%;
         }
         .timeline-scroll-cue {
@@ -380,11 +381,11 @@
         }
         .timeline-inner {
             min-width: 760px;
-            width: max-content;
+            width: 100%;
         }
         .timeline-head {
             display: grid;
-            grid-template-columns: 70px repeat(var(--room-count), minmax(180px, 1fr));
+            grid-template-columns: 70px repeat(var(--room-count), minmax(0, 1fr));
             background: var(--card-bg);
         }
         .timeline-head div {
@@ -415,7 +416,7 @@
         }
         .timeline-body {
             display: grid;
-            grid-template-columns: 70px repeat(var(--room-count), minmax(180px, 1fr));
+            grid-template-columns: 70px repeat(var(--room-count), minmax(0, 1fr));
             position: relative;
             min-height: 420px;
         }
