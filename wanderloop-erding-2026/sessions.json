@@ -196,7 +196,7 @@
       "Amadeus PFS – to be announced"
     ],
     "Room": {
-      "en": "Booths area"
+      "en": "Restaurant"
     },
     "Start": "2026-11-10T17:30:00+01:00",
     "End": "2026-11-10T19:00:00+01:00",
@@ -218,7 +218,7 @@
       "Slobodan Stefanovic"
     ],
     "Room": {
-      "en": "Booths area"
+      "en": "Restaurant"
     },
     "Start": "2026-11-10T17:30:00+01:00",
     "End": "2026-11-10T19:00:00+01:00",
@@ -239,7 +239,7 @@
       "Pierre-Luc Noel"
     ],
     "Room": {
-      "en": "Booths area"
+      "en": "Restaurant"
     },
     "Start": "2026-11-10T17:30:00+01:00",
     "End": "2026-11-10T19:00:00+01:00",
@@ -261,7 +261,7 @@
       "Thomas Stoeckl"
     ],
     "Room": {
-      "en": "Booths area"
+      "en": "Restaurant"
     },
     "Start": "2026-11-10T17:30:00+01:00",
     "End": "2026-11-10T19:00:00+01:00",
@@ -282,7 +282,7 @@
       "Xu He"
     ],
     "Room": {
-      "en": "Booths area"
+      "en": "Restaurant"
     },
     "Start": "2026-11-10T17:30:00+01:00",
     "End": "2026-11-10T19:00:00+01:00",
@@ -291,7 +291,7 @@
 
 
   {
-    "ID": "WL100",
+    "ID": "WL099",
     "Proposal title": "Welcome & Registration",
     "Session type": {
       "en": "Welcome"
@@ -301,255 +301,322 @@
     "Description": "Coffee and refreshments served.",
     "Speaker names": [],
     "Room": {
-      "en": "Auditorium"
+      "en": "Restaurant"
     },
     "Start": "2026-11-11T08:30:00+01:00",
+    "End": "2026-11-11T09:00:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL100",
+    "Proposal title": "Introduction",
+    "Session type": { "en": "Introduction" },
+    "Track": null,
+    "Tags": null,
+    "Description": "",
+    "Speaker names": [],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T09:00:00+01:00",
     "End": "2026-11-11T09:15:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL101",
-    "Proposal title": "Opening Keynote",
-    "Session type": {
-      "en": "Welcome"
-    },
-    "Track": null,
+    "Proposal title": "How to Build Resilient Systems That Don't Fail",
+    "Session type": { "en": "Keynote" },
+    "Track": { "en": "AI platforms at scale" },
     "Tags": null,
-    "Description": "Opening keynote to set the stage for the second day of Wanderloop Erding 2026, highlighting key themes and objectives for the day's sessions.",
-    "Speaker names": [
-      "Sarah Cohadon",
-      "Laurent Dollé"
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
+    "Description": "We spent decades teaching software to be rigid, type-safe, and deterministic. Then, overnight, we gave probabilistic, hallucination-prone text generators access to corporate databases, credit cards, physical turnstiles, and code repositories.\n\nThis talk deconstructs the most spectacular, bizarre, and quiet AI disasters in the wild, from legal fiascos and supply chain slop squatting to automated physical lockouts.\n\nAttendees will walk away with a battle-tested architectural framework to safely sandbox autonomous agents before their bot signs a contract or downloads malware.",
+    "Speaker names": ["Christopher May (Avanade)"],
+    "Room": { "en": "Room A" },
     "Start": "2026-11-11T09:15:00+01:00",
-    "End": "2026-11-11T09:40:00+01:00",
+    "End": "2026-11-11T10:00:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL102",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
-    "Track": {
-      "en": "AI-first teams"
-    },
+    "Proposal title": "Do we Need MCP in our Agentic Apps if we Already Have REST APIs?",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
     "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
-    "Start": "2026-11-11T09:50:00+01:00",
-    "End": "2026-11-11T10:25:00+01:00",
+    "Description": "",
+    "Speaker names": ["Kevin Viet", "Romain Quinio"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T10:05:00+01:00",
+    "End": "2026-11-11T10:40:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL103",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
-    "Track": {
-      "en": "AI platforms at scale"
-    },
+    "Proposal title": "AI Agents Need a Map: Knowledge Graphs for AI-First Engineering at Scale",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
     "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
-    "Start": "2026-11-11T10:35:00+01:00",
-    "End": "2026-11-11T11:10:10+01:00",
+    "Description": "",
+    "Speaker names": ["William Arias (GitLab)"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T10:05:00+01:00",
+    "End": "2026-11-11T10:40:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL104",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
-    "Track": {
-      "en": "AI platforms at scale"
-    },
+    "Proposal title": "Coffee break",
+    "Session type": { "en": "Break" },
+    "Track": null,
     "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
-    "Start": "2026-11-11T11:20:00+01:00",
-    "End": "2026-11-11T11:55:00+01:00",
+    "Description": "",
+    "Speaker names": [],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T10:40:00+01:00",
+    "End": "2026-11-11T10:55:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL105",
-    "Proposal title": "Lunch",
-    "Session type": {
-      "en": "Lunch"
-    },
-    "Track": null,
+    "Proposal title": "AI Inference Sovereignty: Serving LLMs is a Memory Problem",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
     "Tags": null,
-    "Description": "Lunch served in the Amadeus Erding restaurant.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Canteen"
-    },
-    "Start": "2026-11-11T12:00:00+01:00",
-    "End": "2026-11-11T13:30:00+01:00",
+    "Description": "",
+    "Speaker names": ["Erwan Girard (Scality)"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T10:55:00+01:00",
+    "End": "2026-11-11T11:30:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL106",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
+    "Proposal title": "Your AI Budget is Already Running",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Volker Machmeier"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T10:55:00+01:00",
+    "End": "2026-11-11T11:30:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL107",
+    "Proposal title": "Foreman: Building and Deploying Configurations with AI and an MCP Server",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Jan Rajnic"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T11:35:00+01:00",
+    "End": "2026-11-11T12:10:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL108",
+    "Proposal title": "Prompt Registry: the Open Source Package Manager for GenAI Assets",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Waldek Herka"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T11:35:00+01:00",
+    "End": "2026-11-11T12:10:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL109",
+    "Proposal title": "Lunch break & booths",
+    "Session type": { "en": "Lunch" },
     "Track": null,
     "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
+    "Description": "AT AMADEUS RESTAURANT",
+    "Speaker names": [],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T12:10:00+01:00",
+    "End": "2026-11-11T13:30:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL110",
+    "Proposal title": "AI Models: Where Do we Stand in Nov 2026?",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["René Jullien"],
+    "Room": { "en": "Room A" },
     "Start": "2026-11-11T13:30:00+01:00",
     "End": "2026-11-11T14:05:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
-    "ID": "WL107",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
-    "Track": {
-      "en": "AIOps"
-    },
+    "ID": "WL111",
+    "Proposal title": "ACT-X: Transforming Security Operations Through AI, Automation and Threat Intelligence",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AIOps" },
     "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
-    "Start": "2026-11-11T14:15:00+01:00",
-    "End": "2026-11-11T14:50:00+01:00",
-    "From which Amadeus site do you plan to present?": "Erding, Germany"
-  },
-  {
-    "ID": "WL108",
-    "Proposal title": "Tech talk",
-    "Session type": {
-      "en": "Talk"
-    },
-    "Track": {
-      "en": "AI platforms at scale"
-    },
-    "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Auditorium"
-    },
-    "Start": "2026-11-11T15:00:00+01:00",
-    "End": "2026-11-11T15:35:00+01:00",
-    "From which Amadeus site do you plan to present?": "Erding, Germany"
-  },
-  {
-    "ID": "WL109A",
-    "Proposal title": "Breakout session",
-    "Session type": {
-      "en": "Breakout session"
-    },
-    "Track": {
-      "en": "AIOps"
-    },
-    "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Breakout room A"
-    },
-    "Start": "2026-11-11T15:45:00+01:00",
-    "End": "2026-11-11T17:15:00+01:00",
-    "From which Amadeus site do you plan to present?": "Erding, Germany"
-  },
-  {
-    "ID": "WL109B",
-    "Proposal title": "Breakout session",
-    "Session type": {
-      "en": "Breakout session"
-    },
-    "Track": {
-      "en": "AI platforms at scale"
-    },
-    "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Breakout room B"
-    },
-    "Start": "2026-11-11T15:45:00+01:00",
-    "End": "2026-11-11T17:15:00+01:00",
-    "From which Amadeus site do you plan to present?": "Erding, Germany"
-  },
-  {
-    "ID": "WL109C",
-    "Proposal title": "Breakout session",
-    "Session type": {
-      "en": "Breakout session"
-    },
-    "Track": {
-      "en": "AI-first teams"
-    },
-    "Tags": null,
-    "Description": "To be announced.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Breakout room C"
-    },
-    "Start": "2026-11-11T15:45:00+01:00",
-    "End": "2026-11-11T17:15:00+01:00",
+    "Description": "",
+    "Speaker names": ["Yash Agarwal"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T13:30:00+01:00",
+    "End": "2026-11-11T14:05:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL112",
-    "Proposal title": "Snacks & Beers",
-    "Session type": {
-      "en": "Closing cocktail"
-    },
+    "Proposal title": "Two Questions Every Ops Team Asks, Answered by a Knowledge Graph",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Francesco Pace"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T14:10:00+01:00",
+    "End": "2026-11-11T14:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL113",
+    "Proposal title": "From RAG to Production Agents: Building the AI Context Layer with MongoDB",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Thomas Scott (MongoDB)"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T14:10:00+01:00",
+    "End": "2026-11-11T14:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL114",
+    "Proposal title": "Observability as the Foundation for AIOps – Giving AI the Right Tools for Autonomous Investigation",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Vincent Cornilion", "James Searby"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T14:50:00+01:00",
+    "End": "2026-11-11T15:25:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL115",
+    "Proposal title": "Closing the Loop: What it Takes for Software to Start Maintaining Itself",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Harley Chen (Fabric)"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T14:50:00+01:00",
+    "End": "2026-11-11T15:25:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL116",
+    "Proposal title": "Coffee break",
+    "Session type": { "en": "Break" },
     "Track": null,
     "Tags": null,
-    "Description": "Join us for snacks & beers to network and discuss the day's insights & takeaways.",
-    "Speaker names": [
-      ""
-    ],
-    "Room": {
-      "en": "Canteen"
-    },
-    "Start": "2026-11-11T17:15:00+01:00",
-    "End": "2026-11-11T18:30:00+01:00",
+    "Description": "",
+    "Speaker names": [],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T15:25:00+01:00",
+    "End": "2026-11-11T15:40:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL117",
+    "Proposal title": "The Most Underutilized Data Platform in the Company? Your Laptop!",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Juan Lorenzo Arellano Hernandez"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T15:40:00+01:00",
+    "End": "2026-11-11T16:15:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL118",
+    "Proposal title": "From Dev Portal to AI Grounding Layer: Scaling Backstage capabilities for humans & AI agents",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Céline Petit", "Xavier Abello"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T15:40:00+01:00",
+    "End": "2026-11-11T16:15:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL119",
+    "Proposal title": "Operating at Machine Speed: Building Self-Healing Platforms with Pentad",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Francois-Xavier Kowalski"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T16:20:00+01:00",
+    "End": "2026-11-11T16:55:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL120",
+    "Proposal title": "The Certificate That Renews Itself: a Case Study in AI-First Engineering",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI-first teams" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Cristina de Dios González"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T16:20:00+01:00",
+    "End": "2026-11-11T16:55:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL121",
+    "Proposal title": "AIOps Tokenomics",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Randy Lerma", "Richard Patra"],
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T17:00:00+01:00",
+    "End": "2026-11-11T17:35:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL122",
+    "Proposal title": "Stop Paying for Data Sprawl: A Better Memory for AI Agents",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Fabrice Leray (Couchbase)"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T17:00:00+01:00",
+    "End": "2026-11-11T17:35:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL123",
+    "Proposal title": "Afterwork",
+    "Session type": { "en": "Afterwork" },
+    "Track": null,
+    "Tags": null,
+    "Description": "",
+    "Speaker names": [],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T17:35:00+01:00",
+    "End": "2026-11-11T19:00:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   }
 ]

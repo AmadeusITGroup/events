@@ -1175,7 +1175,11 @@
         }
 
         function renderTimelineDay(dayLabel, sessions) {
-            const rooms = [...new Set(sessions.map(s => s.room).filter(Boolean))].sort();
+            const rooms = [...new Set(sessions.map(s => s.room).filter(Boolean))].sort((left, right) => {
+                if (left === 'Restaurant') return 1;
+                if (right === 'Restaurant') return -1;
+                return left.localeCompare(right);
+            });
             const safeRooms = rooms.length ? rooms : ['General'];
             const starts = sessions.map(s => s.start.getHours() * 60 + s.start.getMinutes());
             const ends = sessions.map(s => s.start.getHours() * 60 + s.start.getMinutes() + s.durationMins);
