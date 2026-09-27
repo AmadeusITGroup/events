@@ -281,8 +281,37 @@
         }
         .session-time { background: var(--primary); color: white; font-family: var(--font-mono); font-weight: 700; }
         .session-type, .session-room { background: var(--bg-light); color: var(--text-secondary); }
+        .session-level {
+            display: inline-block;
+            margin: 0.45rem 0 0 0.35rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: var(--radius-sm);
+            background: var(--secondary);
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 600;
+            vertical-align: top;
+        }
+        .session-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-top: 0.7rem;
+            padding-top: 0.55rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .session-card-footer .session-room {
+            margin: 0;
+            font-size: 0.68rem;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            color: var(--text-secondary);
+        }
         [data-theme="dark"] .session-type,
         [data-theme="dark"] .session-room { background: var(--dark-accent); }
+        [data-theme="dark"] .session-card-footer .session-room { background: transparent; }
         .session-title { margin: 0 0 0.35rem 0; font-size: 1rem; line-height: 1.35; }
         .session-speakers { margin: 0; color: var(--accent); font-size: 0.85rem; font-weight: 500; }
         .session-track {
@@ -494,6 +523,17 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .timeline-session-level {
+            display: inline;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
         .timeline-session-title { font-size: 0.78rem; font-weight: 700; line-height: 1.3; }
         .timeline-session-title.compact {
             font-size: 0.76rem;
@@ -594,6 +634,17 @@
             color: #fff;
             margin-bottom: 0.75rem;
         }
+        .session-modal-level {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            background: var(--secondary);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 0.35rem;
+            margin-bottom: 0.75rem;
+        }
         .session-modal-title {
             margin: 0 0 0.5rem 0;
             font-size: 1.45rem;
@@ -637,6 +688,12 @@
             flex-wrap: wrap;
             gap: 0.6rem;
             align-items: center;
+        }
+        .session-modal-room {
+            margin-left: auto;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 600;
         }
         .session-modal-btn {
             display: inline-flex;
@@ -1007,6 +1064,7 @@
                 track: getTrack(session),
                 type: getType(session),
                 room: getRoom(session),
+                level: session.Level || session.level || '',
                 description: session.Description || session.description || '',
                 start,
                 durationMins,
@@ -1115,7 +1173,7 @@
         }
 
         function renderGridDay(dayLabel, sessions) {
-            return `<div class="schedule-day"><div class="day-header"><h2>${dayLabel}</h2><span class="session-count">${pluralize(sessions.length, 'session')}</span></div><div class="sessions-grid">${sessions.map(s => `<article class="session-card" data-session-code="${s.id}"><div class="session-track-bar" style="background: ${getTrackColor(s.track)}"></div><div class="session-content"><div class="session-meta"><span class="session-time">${formatClock(s.start)}</span>${s.type ? `<span class="session-type">${s.type}</span>` : ''}${s.room ? `<span class="session-room">${s.room}</span>` : ''}</div><h3 class="session-title">${s.title}</h3>${s.speakers ? `<p class="session-speakers">${s.speakers}</p>` : ''}${s.track ? `<span class="session-track" style="background:${getTrackColor(s.track)}">${s.track}</span>` : ''}${renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}</div></article>`).join('')}</div></div>`;
+            return `<div class="schedule-day"><div class="day-header"><h2>${dayLabel}</h2><span class="session-count">${pluralize(sessions.length, 'session')}</span></div><div class="sessions-grid">${sessions.map(s => `<article class="session-card" data-session-code="${s.id}"><div class="session-track-bar" style="background: ${getTrackColor(s.track)}"></div><div class="session-content"><div class="session-meta"><span class="session-time">${formatClock(s.start)}</span>${s.type ? `<span class="session-type">${s.type}</span>` : ''}</div><h3 class="session-title">${s.title}</h3>${s.speakers ? `<p class="session-speakers">${s.speakers}</p>` : ''}${s.track ? `<span class="session-track" style="background:${getTrackColor(s.track)}">${s.track}</span>` : ''}${s.level ? `<span class="session-level">Level: ${s.level}</span>` : ''}${s.room ? `<div class="session-card-footer">${renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}<span class="session-room">📍 ${s.room}</span></div>` : renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}</div></article>`).join('')}</div></div>`;
         }
 
         function computeOverlapLanes(roomSessions) {
@@ -1211,7 +1269,7 @@
                     const compactCardClass = isCompact ? ' compact' : '';
                     const compactTimeClass = isCompact ? ' compact' : '';
                     const compactTitleClass = isCompact ? ' compact' : '';
-                    const compactTime = `<div class="timeline-session-time${compactTimeClass}">${formatClock(s.start)}&nbsp;&nbsp;•&nbsp;&nbsp;${s.type || 'Session'}</div>`;
+                    const compactTime = `<div class="timeline-session-time${compactTimeClass}">${formatClock(s.start)}&nbsp;&nbsp;•&nbsp;&nbsp;${s.type || 'Session'}${s.level ? `&nbsp;&nbsp;•&nbsp;&nbsp;<span class="timeline-session-level">${s.level}</span>` : ''}</div>`;
                     const compactSpeakers = (!isCompact && s.speakers) ? `<div class="timeline-session-speaker">${s.speakers}</div>` : '';
                     const compactFeedback = isCompact ? '' : renderFeedbackLink(s, 'timeline-session-feedback', 'Feedback');
                     return `<article class="timeline-session${compactCardClass}" data-session-code="${s.id}" data-lane-count="${laneInfo.laneCount}" style="top:${top}px;height:${h}px;--lane-index:${laneInfo.lane};--lane-count:${laneInfo.laneCount};border-left-color:${getTrackColor(s.track)}">${compactTime}<div class="timeline-session-title${compactTitleClass}">${s.title}</div>${compactSpeakers}${compactFeedback}</article>`;
@@ -1376,12 +1434,12 @@
                     <div class="session-modal-header">
                         <button class="session-modal-close" data-close-modal="1">✕</button>
                         ${session.track ? `<span class="session-modal-track" style="background:${trackColor}">${session.track}</span>` : ''}
+                        ${session.level ? `<span class="session-modal-level">Level: ${session.level}</span>` : ''}
                         <h2 class="session-modal-title">${session.title}</h2>
                         <div class="session-modal-meta">
                             <span>${dayLabel}</span>
                             <span>${start} → ${end} (${session.durationMins} min)</span>
                             ${session.type ? `<span>${session.type}</span>` : ''}
-                            ${session.room ? `<span>📍 ${session.room}</span>` : ''}
                         </div>
                     </div>
                     <div class="session-modal-body">
@@ -1391,6 +1449,7 @@
                     <div class="session-modal-footer">
                         ${showFeedback ? `<a href="${getFeedbackUrl(session)}" target="_blank" rel="noopener" class="session-modal-btn session-modal-btn-primary">Give Feedback</a>` : ''}
                         <button class="session-modal-btn session-modal-btn-secondary" data-close-modal="1">Close</button>
+                        ${session.room ? `<span class="session-modal-room">📍 ${session.room}</span>` : ''}
                     </div>
                 </div>`;
 
