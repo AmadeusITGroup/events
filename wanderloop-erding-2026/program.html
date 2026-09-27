@@ -658,10 +658,36 @@
             font-size: 0.86rem;
             color: var(--text-secondary);
         }
+        .session-modal-body-wrap {
+            position: relative;
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
         .session-modal-body {
+            flex: 1;
+            min-height: 0;
             padding: 1.4rem;
             overflow-y: auto;
-            flex: 1;
+            height: auto;
+            box-sizing: border-box;
+        }
+        .session-modal-fade {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            height: 7rem;
+            background: linear-gradient(to bottom, transparent 0%, var(--card-bg) 74%);
+            opacity: 0.84;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+        .session-modal-fade.is-hidden {
+            opacity: 0;
         }
         .session-modal-speakers {
             display: flex;
@@ -680,6 +706,12 @@
             color: var(--text-color);
             line-height: 1.65;
             font-size: 0.95rem;
+        }
+        .session-modal-description p {
+            margin: 0 0 1rem;
+        }
+        .session-modal-description p:last-child {
+            margin-bottom: 0;
         }
         .session-modal-footer {
             padding: 1rem 1.4rem;
@@ -1442,9 +1474,12 @@
                             ${session.type ? `<span>${session.type}</span>` : ''}
                         </div>
                     </div>
-                    <div class="session-modal-body">
-                        ${session.speakersList.length ? `<div class="session-modal-speakers">${session.speakersList.map(s => `<span class="session-modal-speaker">${s}</span>`).join('')}</div>` : ''}
-                        <div class="session-modal-description">${description}</div>
+                    <div class="session-modal-body-wrap">
+                        <div class="session-modal-body">
+                            ${session.speakersList.length ? `<div class="session-modal-speakers">${session.speakersList.map(s => `<span class="session-modal-speaker">${s}</span>`).join('')}</div>` : ''}
+                            <div class="session-modal-description">${description}</div>
+                        </div>
+                        <div class="session-modal-fade is-hidden" aria-hidden="true"></div>
                     </div>
                     <div class="session-modal-footer">
                         ${showFeedback ? `<a href="${getFeedbackUrl(session)}" target="_blank" rel="noopener" class="session-modal-btn session-modal-btn-primary">Give Feedback</a>` : ''}
@@ -1456,6 +1491,15 @@
             document.body.appendChild(modal);
             document.body.style.overflow = 'hidden';
             requestAnimationFrame(() => modal.classList.add('active'));
+
+            const modalBody = modal.querySelector('.session-modal-body');
+            const modalFade = modal.querySelector('.session-modal-fade');
+            const updateModalScrollState = () => {
+                const hasMore = modalBody.scrollTop + modalBody.clientHeight < modalBody.scrollHeight - 2;
+                modalFade.classList.toggle('is-hidden', !hasMore);
+            };
+            modalBody.addEventListener('scroll', updateModalScrollState, { passive: true });
+            requestAnimationFrame(updateModalScrollState);
 
             const close = () => closeSessionModal(modal);
             modal.addEventListener('click', e => { if (e.target === modal) close(); });
