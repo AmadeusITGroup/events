@@ -625,7 +625,7 @@
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "",
+    "Description": "AI agents are only as good as what they remember, and in production, memory can't be an afterthought. This session explores how a leading fashion retailer builds production-grade AI agents through three live examples running on real infrastructure: an AWS Cost Analyzer spanning 17 accounts, a DevOps Incident Analyzer coordinating seven specialized sub-agents in parallel, and an Elastic IaC Proposer that creates GitOps changes and autonomously opens merge requests.\n\nThe right foundation brings together unstructured data, full-text search, hybrid search, and vector and semantic search, without stitching together separate stores for each type of memory.\n\nSee how to give agents the context they need, when they need it, at production scale.",
     "Speaker names": ["Fabrice Leray (Couchbase)"],
     "Room": { "en": "Room B" },
     "Start": "2026-11-11T17:00:00+01:00",
