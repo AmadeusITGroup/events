@@ -406,8 +406,13 @@ function getCfpHref(event) {
     return `mailto:${contact}?subject=${encodeURIComponent(`Talk proposal for ${eventName}`)}`;
 }
 
-function getRegisterHref(event) {
-    return event.registerUrl || 'https://forms.cloud.microsoft/e/NANjt1AJwF';
+function getRegisterHref(event, dateFilter) {
+    const dateSpecificUrl = dateFilter === '2026-11-10'
+        ? event['registerUrl-2026-11-10']
+        : dateFilter === '2026-11-11'
+            ? event['registerUrl-2026-11-11']
+            : null;
+    return dateSpecificUrl || event.registerUrl || 'https://forms.cloud.microsoft/e/NANjt1AJwF';
 }
 
 function setLinkAttributes(el, href) {
@@ -561,9 +566,9 @@ function computeStatus(hasProgramPage, showCfp) {
 
 async function updateProgramLinks(event) {
     const cfpHref = getCfpHref(event);
-    const registerHref = getRegisterHref(event);
     const showCfp = event.showCfp !== false; // defaults to true if not specified
     const dateFilter = window.currentDateFilter;
+    const registerHref = getRegisterHref(event, dateFilter);
 
     let hasSessions = false;
     let hasProgramPage = false;
@@ -602,7 +607,7 @@ async function updateProgramLinks(event) {
         hideCfpLink();
     }
 
-    if (dateFilter === '2026-11-10' && registerHref) {
+    if ((dateFilter === '2026-11-10' || dateFilter === '2026-11-11') && registerHref) {
         showRegisterLink(registerHref);
     } else {
         hideRegisterLink();
