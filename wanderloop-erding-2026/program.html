@@ -327,14 +327,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
-            margin-top: 0.6rem;
-            margin-left: 0.75rem;
+            padding: 0.3rem 0.5rem;
+            border: 1px solid rgba(182, 80, 255, 0.5);
+            border-radius: var(--radius-sm);
+            background: rgba(182, 80, 255, 0.12);
             color: var(--secondary);
-            font-size: 0.75rem;
+            font-size: 0.68rem;
             font-weight: 700;
             text-decoration: none;
         }
-        .feedback-link:hover { color: var(--accent); }
+        .feedback-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(255, 88, 172, 0.12);
+        }
         .feedback-link svg {
             width: 14px;
             height: 14px;
@@ -548,10 +554,19 @@
             font-size: 0.68rem;
             font-weight: 700;
             color: var(--accent);
+            padding: 0.12rem 0.25rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 88, 172, 0.07);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.2rem;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .timeline-session-feedback:hover {
+            color: var(--text-secondary);
+            background: transparent;
         }
         .timeline-session-feedback svg {
             width: 12px;
@@ -739,7 +754,8 @@
             justify-content: center;
             gap: 0.45rem;
             padding: 0.7rem 1.1rem;
-            width: 9rem;
+            width: 10rem;
+            flex: 0 0 10rem;
             box-sizing: border-box;
             border-radius: var(--radius-md);
             text-decoration: none;
@@ -749,6 +765,12 @@
             line-height: 1.2;
             border: none;
             cursor: pointer;
+            white-space: nowrap;
+        }
+        .session-modal-btn svg {
+            width: 1rem;
+            height: 1rem;
+            flex: 0 0 auto;
         }
         .session-modal-btn-primary {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
@@ -1123,8 +1145,13 @@
             return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Feedback for ${session.title}`)}`;
         }
 
+        const FEEDBACK_DISABLED_TYPES = new Set([
+            'lunch', 'break', 'introduction', 'welcome', 'afterwork', 'networking booth', 'closing'
+        ]);
+
         function renderFeedbackLink(session, className, label, title = '') {
-            if (!showFeedback) return '';
+            const sessionType = String(session.type || '').trim().toLowerCase();
+            if (!showFeedback || FEEDBACK_DISABLED_TYPES.has(sessionType)) return '';
             const titleAttr = title ? ` title="${title}"` : '';
             return `<a href="${getFeedbackUrl(session)}" target="_blank" rel="noopener" class="${className}"${titleAttr}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>${label}</a>`;
         }
@@ -1314,7 +1341,7 @@
                     const compactTitleClass = isCompact ? ' compact' : '';
                     const compactTime = `<div class="timeline-session-time${compactTimeClass}">${formatClock(s.start)}&nbsp;&nbsp;•&nbsp;&nbsp;${s.type || 'Session'}${s.level ? `&nbsp;&nbsp;•&nbsp;&nbsp;<span class="timeline-session-level">${s.level}</span>` : ''}</div>`;
                     const compactSpeakers = (!isCompact && s.speakers) ? `<div class="timeline-session-speaker">${s.speakers}</div>` : '';
-                    const compactFeedback = isCompact ? '' : renderFeedbackLink(s, 'timeline-session-feedback', 'Feedback');
+                    const compactFeedback = isCompact ? '' : renderFeedbackLink(s, 'timeline-session-feedback', 'Give Feedback', 'Open feedback form');
                     return `<article class="timeline-session${compactCardClass}" data-session-code="${s.id}" data-lane-count="${laneInfo.laneCount}" style="top:${top}px;height:${h}px;--lane-index:${laneInfo.lane};--lane-count:${laneInfo.laneCount};border-left-color:${getTrackColor(s.track)}">${compactTime}<div class="timeline-session-title${compactTitleClass}">${s.title}</div>${compactSpeakers}${compactFeedback}</article>`;
                 }).join('');
                 return `<div class="timeline-room-col" style="height:${height}px">${lines}${cards}</div>`;
@@ -1493,7 +1520,7 @@
                         <div class="session-modal-fade is-hidden" aria-hidden="true"></div>
                     </div>
                     <div class="session-modal-footer">
-                        ${showFeedback ? `<a href="${getFeedbackUrl(session)}" target="_blank" rel="noopener" class="session-modal-btn session-modal-btn-primary">Give Feedback</a>` : ''}
+                        ${renderFeedbackLink(session, 'session-modal-btn session-modal-btn-primary', 'Give Feedback')}
                         <button class="session-modal-btn session-modal-btn-secondary" data-close-modal="1">Close</button>
                         ${session.room ? `<span class="session-modal-room">📍 ${session.room}</span>` : ''}
                     </div>
