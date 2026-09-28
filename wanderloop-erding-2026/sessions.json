@@ -458,7 +458,7 @@
     "Track": { "en": "AI-first teams" },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "",
+    "Description": "Over the past few years, Amadeus has been accelerating GenAI adoption across an engineering community of 11,000+ engineers. René Jullien, leading the Amadeus AI acceleration, will share how this journey is shaping the way teams build software and the broader AI-DLC transformation.\n\nLooking at the landscape in 2026, René will explore where large language models, AI agents and agentic development tools stand, how they fit into the software development lifecycle, and what their growing capabilities mean at scale, both for the engineers and their company. The session offers a guided view of the fast-moving GenAI and agentic technology landscape, grounded in Amadeus's experience and the choices ahead.",
     "Speaker names": ["René Jullien"],
     "Room": { "en": "Room A" },
     "Start": "2026-11-11T13:30:00+01:00",
