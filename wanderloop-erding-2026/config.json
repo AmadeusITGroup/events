@@ -1,7 +1,7 @@
 {
   "eventName": "Wanderloop Erding 2026",
   "eventSlug": "wanderloop-erding-2026",
-  "tagline": "Compiled exploration & exchanges focusing on **AIOps**, **AI platforms at scale** & **AI-first teams**",
+  "tagline": "Compiled exploration & exchanges focusing on **AIOps**, **AI platforms at scale** & **AI-empowered teams**",
   "tagline-2026-11-10": "Shape an AIOps future: share our vision of **No Touch operations** with human oversight, gather insights & build an ecosystem with other **industry experts & leaders**",
   "tagline-2026-11-11": "Re-engineer the way we work with AI: how **services are operated**, **platforms are built** and **engineers & ops collaborate** – on-site event where tech & non-tech audiences meet global experts & industry leaders",
   "dates": {
@@ -66,8 +66,8 @@
     },
     {
       "icon": "👩‍💻",
-      "name": "AI-first teams",
-      "description": "**How does AI affect our business and the way we work.**<br/><br/>Leading teams through AI transformation, skillsets evolution, AI-first engineering practices, intellectual property & value creation"
+      "name": "AI-empowered teams",
+      "description": "**How does AI affect our business and the way we work.**<br/><br/>Leading teams through AI transformation, skillsets evolution, AI-driven engineering practices, intellectual property & value creation"
     }
   ],
   "sessionTypes": [

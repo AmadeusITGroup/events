@@ -49,7 +49,7 @@
     },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "An in-depth look at Amadeus's journey toward No-Touch Operations — why AIOps is the right strategy now, and how we are building towards fully automated, self-healing operations.",
+    "Description": "An in-depth look at Amadeus's journey toward No-Touch Operations — why AIOps appears to be the right strategy now, and how we are aiming at fully automated, self-healing operations.",
     "Speaker names": [
       "Slobodan Stefanovic"
     ],
@@ -84,7 +84,7 @@
   },
   {
     "ID": "WL005A",
-    "Proposal title": "AI-first Journey – Network and observability",
+    "Proposal title": "AI-Driven Journey – Network and observability",
     "Session type": {
       "en": "Breakout session"
     },
@@ -93,7 +93,7 @@
     },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "A focused breakout discussion on the AI-first journey in network automation and observability, exploring how AI is transforming how we monitor, detect, and respond to network events.",
+    "Description": "A focused breakout discussion on the AI-driven journey in network automation and observability, exploring how AI is transforming how we monitor, detect, and respond to network events.",
     "Speaker names": [
       "Amadeus PFS – to be announced"
     ],
@@ -111,11 +111,11 @@
       "en": "Breakout session"
     },
     "Track": {
-      "en": "AI-first teams"
+      "en": "AI-empowered teams"
     },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "Explore how to unlock AI's potential through the right skills, roles, and responsibilities. This breakout session focuses on the organizational and human aspects of AI transformation — how teams must evolve to succeed in an AI-first operations world.",
+    "Description": "Explore how to unlock AI's potential through the right skills, roles, and responsibilities. This breakout session focuses on the organizational and human aspects of AI transformation — how teams could evolve to succeed in an AI-driven operations world.",
     "Speaker names": [
       "Monika Erhart",
       "Richard Patra"
@@ -357,7 +357,7 @@
   },
   {
     "ID": "WL103",
-    "Proposal title": "AI Agents Need a Map: Knowledge Graphs for AI-First Engineering at Scale",
+    "Proposal title": "AI Agents Need a Map: Knowledge Graphs for AI-Driven Engineering at Scale",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -400,7 +400,7 @@
     "ID": "WL106",
     "Proposal title": "Your AI Budget is Already Running",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Beginner",
     "Description": "Copilot, CoWork, Claude, Kiro, OpenAI, Grok, and Perplexity can save days of work or quietly waste thousands of tokens.\n\nLearn practical AI FinOps techniques to:\n\n- Reduce AI consumption\n- Improve answer quality\n- Choose the right tool\n- Monitor quotas and credits\n- Maximize productivity\n\nJoin us as we use real-world engineering, analytics, research, and presentation scenarios.",
@@ -414,7 +414,7 @@
     "ID": "WL107",
     "Proposal title": "Foreman: Building and Deploying Configurations with AI and an MCP Server",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Intermediate",
     "Description": "Foreman is a leading open source systems management platform used to manage Linux infrastructure at scale. It provides capabilities for provisioning, configuration management, lifecycle management, compliance, and content distribution. At Amadeus, Foreman is primarily used as a large-scale Linux content delivery platform, distributing operating system packages, updates, and software repositories to thousands of systems across on-premises and cloud environments.\n\nThis session explores two complementary ways Artificial Intelligence can enhance the Foreman ecosystem and the daily work of platform engineering teams.\n\nThe first part focuses on configuration management with AI. Using natural language, administrators can leverage AI to design, generate, validate, and deploy Foreman configurations. From content views and lifecycle environments to provisioning templates, host parameters, and automation workflows, AI can accelerate configuration creation, reduce manual effort, improve consistency, and simplify operational tasks. Through practical examples, attendees will see how AI can help transform requirements into deployable Foreman configurations while maintaining governance and operational control.\n\nThe second part introduces the Foreman MCP (Model Context Protocol) Server and demonstrates how it enables AI clients to interact directly with Foreman. By exposing Foreman resources and operational context through a standardized interface, the MCP Server allows AI assistants to understand the platform and provide context-aware guidance. Live demonstrations will show how AI clients can query inventory, inspect content lifecycle states, troubleshoot issues, retrieve operational information, and assist administrators using real Foreman data.\n\nDrawing on real-world enterprise experience, the session discusses implementation considerations, security boundaries, governance, and the importance of maintaining a human-in-the-loop approach for operational decisions. It also explores how AI can evolve from a productivity tool into a trusted operational companion for infrastructure teams.\n\nWhether you are a Linux administrator, platform engineer, DevOps practitioner, or open source enthusiast, this session provides a practical look at how AI can simplify both the management and operation of Foreman. Attendees will leave with a clear understanding of AI-assisted configuration deployment, the Foreman MCP ecosystem, and how these technologies can improve efficiency while preserving the transparency, reliability, and control required in enterprise environments.",
@@ -455,7 +455,7 @@
     "ID": "WL110",
     "Proposal title": "AI Models: Where Do we Stand in Nov 2026?",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Beginner",
     "Description": "Over the past few years, Amadeus has been accelerating GenAI adoption across an engineering community of 11,000+ engineers. René Jullien, leading the Amadeus AI acceleration, will share how this journey is shaping the way teams build software and the broader AI-DLC transformation.\n\nLooking at the landscape in 2026, René will explore where large language models, AI agents and agentic development tools stand, how they fit into the software development lifecycle, and what their growing capabilities mean at scale, both for the engineers and their company. The session offers a guided view of the fast-moving GenAI and agentic technology landscape, grounded in Amadeus's experience and the choices ahead.",
@@ -525,7 +525,7 @@
     "ID": "WL115",
     "Proposal title": "Closing the Loop: What it Takes for Software to Start Maintaining Itself",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Intermediate",
     "Description": "Most of what an engineering team does all day is move work through a loop. A bug comes in, or an incident, or someone wants a feature. Somebody decides whether it matters. Somebody writes the fix. Somebody else reviews it and runs the tests. It ships, and then it breaks something. It accumulates, and at every step there is a person holding it together.\n\nThis session is about rebuilding it so it runs from signal to shipped change on its own, with people designing, checking and governing the system rather than working inside it. We call the result a software factory.\n\nAt Factory, a lot of what we learned is unglamorous: you cannot hand complex work to an agent without an automatic way of checking the result, so the first job in most codebases is linters, type checks and tests, not AI. Some of it surprised us. The expensive model is often the cheap one once you count what a finished code review actually costs, and the model matters less than the layer around it. And if a system is learning how your engineering organisation works, you should be the one who owns what it learns.\n\nWe'll walk through which parts of the loop we handed over first, how we tell whether a codebase is ready, and where it still falls over.",
@@ -552,7 +552,7 @@
     "ID": "WL117",
     "Proposal title": "The Most Underutilized Data Platform in the Company? Your Laptop!",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Beginner",
     "Description": "Why spend thousands on infrastructure to analyze data you can process in minutes on your own machine?\n\nIn this session, we'll challenge the assumption that every data problem requires a cloud platform, Spark cluster, or data lake. Through real examples using the R package data.table and the lightning-fast DuckDB, you'll see how modern laptops can comfortably handle gigabytes of CSV and Parquet data with remarkable speed and efficiency. We'll explore practical techniques for querying, transforming, and visualizing large datasets, while leveraging AI assistants such as Copilot and Cowork to generate code, build analyses, and accelerate data exploration.\n\nThe session concludes with a complete analytical workflow, from raw files to interactive Quarto reports, Reactable tables, and Shiny dashboards. If you've forgotten just how powerful your laptop really is, this session might change your perspective.",
@@ -591,9 +591,9 @@
   },
   {
     "ID": "WL120",
-    "Proposal title": "The Certificate That Renews Itself: a Case Study in AI-First Engineering",
+    "Proposal title": "The Certificate That Renews Itself: a Case Study in AI-Driven Engineering",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AI-first teams" },
+    "Track": { "en": "AI-empowered teams" },
     "Tags": null,
     "Level": "Intermediate",
     "Description": "Renewing and redeploying F5 TLS certificates used to mean manual tickets, manual Venafi approvals, and manual SSH into load balancers: slow, error-prone, and impossible to scale.\n\nThis talk shows how we rebuilt that process with an AI coding agent as a real engineering partner: an Ansible pipeline that discovers expiring certs, opens and routes tickets, renews them in Venafi, deploys across F5 clusters, and validates the result with real production bugs diagnosed and fixed through AI-assisted debugging along the way.\n\nWe'll cover what changes when an agent can read logs and iterate on real failures, the hours reclaimed per renewal, and what it means for skills, workflow, and IP when AI writes a large share of the code.\n\nA real system, in production, with the receipts.",
