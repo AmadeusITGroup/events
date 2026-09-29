@@ -364,9 +364,9 @@
     "Level": "Beginner",
     "Description": "AI coding agents can be remarkably effective inside a single repository. At enterprise scale, however, the hardest problem is not generating code. It is giving agents enough context to understand how software is connected, owned, tested, and operated.\n\nIn a large engineering organization, the service being changed may have callers in other repositories, dependencies owned by different teams, pipelines that validate it, and deployment paths that determine its production impact. Semantic retrieval can surface relevant files, but it does not by itself provide a reliable map of those relationships. When agents lack that map, they can produce answers that sound plausible while missing the dependencies and operational context that matter most.\n\nThis talk explores why code is not just text, and how a knowledge graph adds structured, traversable context to AI-assisted software engineering. We will look at nodes and relationships across source code, projects, merge requests, pipelines, deployments, and ownership, and show how multi-hop queries help answer practical questions such as: What depends on this service? What could break if we change it? Which pipeline or deployment path is involved? Who owns the affected components?\n\nThe session will then show how GitLab Orbit exposes this context to AI agents, including GitLab Duo Agent Platform and external tools through the Model Context Protocol, or MCP. In a live demo, William Arias will ask the same question with and without graph-backed context, highlighting the difference between an agent that searches fragments of a codebase and one that can traverse the relationships across an entire software system.\n\nThe goal is not to replace developers’ judgment. It is to give developers and their agents a more complete, permission-aware view of the systems they are changing, so they can move faster with greater confidence and fewer surprises.\n\nKey takeaways:\n\n- Why semantic RAG alone can hit a ceiling for complex, interconnected codebases\n- How a knowledge graph complements code search and semantic retrieval\n- How graph-backed context supports impact analysis, dependency mapping, and safer refactoring\n- How MCP connects Orbit to AI-assisted development workflows\n- What the difference looks like in practice, through a live Orbit demo",
     "Speaker names": ["William Arias (GitLab)"],
-    "Room": { "en": "Room B" },
-    "Start": "2026-11-11T10:05:00+01:00",
-    "End": "2026-11-11T10:40:00+01:00",
+    "Room": { "en": "Room A" },
+    "Start": "2026-11-11T16:20:00+01:00",
+    "End": "2026-11-11T16:55:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -578,16 +578,15 @@
   },
   {
     "ID": "WL119",
-    "Proposal title": "Operating at Machine Speed: Building Self-Healing Platforms with Pentad",
+    "Proposal title": "FinOps for AI: How to understand and optimize the cost of AI?",
     "Session type": { "en": "Talk" },
-    "Track": { "en": "AIOps" },
+    "Track": { "en": "AI platforms at scale" },
     "Tags": null,
-    "Level": "Intermediate",
-    "Description": "How observability, AI agents and operational skills are transforming incident response into autonomous operations.\n\nModern services are evolving faster than ever. Releases are more frequent, systems are more complex, and operational teams are expected to handle an ever-growing volume of events without increasing headcount.\n\nTo meet this challenge, we need to rethink operations itself.\n\nIn this talk, we will present Pentad, the self-healing platform developed within Amadeus, and the engineering principles behind autonomous operational systems. Pentad combines AI-powered agents, operational expertise, and reusable skillsets to investigate incidents, perform diagnostics, gather evidence, and progressively automate operational workflows.\n\nRather than treating AI as a conversational assistant, Pentad approaches AI as a new member of the operations team. Operational knowledge becomes executable. Troubleshooting procedures become reusable skills. Platform expertise can be shared, scaled, continuously improved, and executed at machine speed.\n\nWe'll explore how the platform transforms traditional runbooks into autonomous capabilities, how domain teams can package their knowledge as operational skills, and how systems can move from reactive operations toward low-touch and eventually no-touch operational models.\n\nThe session will cover the platform architecture, the concept of operational skill collections, lessons learned while building self-healing capabilities, and the practical challenges of introducing autonomous agents into production environments safely and responsibly.\n\nAttendees will gain a concrete understanding of what self-healing means beyond the buzzwords, how AI-powered operational agents can augment engineering teams, and what organizational and technical foundations are required to make autonomous operations a reality.",
-    "Speaker names": ["Francois-Xavier Kowalski"],
-    "Room": { "en": "Room A" },
-    "Start": "2026-11-11T16:20:00+01:00",
-    "End": "2026-11-11T16:55:00+01:00",
+    "Description": "AI spending is rising rapidly, yet it remains challenging to understand, report on, and allocate these costs.\n\nThis session shares our practical experience building a FinOps approach for AI, starting with a fundamental question: what should count as an AI cost?\n\nA clear, consistent definition enabled us to develop reporting, forecasting, and allocation capabilities grounded in token unit economics and established FinOps principles.",
+    "Speaker names": ["Julien Maria"],
+    "Room": { "en": "Room B" },
+    "Start": "2026-11-11T10:05:00+01:00",
+    "End": "2026-11-11T10:40:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
