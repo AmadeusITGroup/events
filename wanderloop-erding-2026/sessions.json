@@ -365,8 +365,8 @@
     "Description": "AI coding agents can be remarkably effective inside a single repository. At enterprise scale, however, the hardest problem is not generating code. It is giving agents enough context to understand how software is connected, owned, tested, and operated.\n\nIn a large engineering organization, the service being changed may have callers in other repositories, dependencies owned by different teams, pipelines that validate it, and deployment paths that determine its production impact. Semantic retrieval can surface relevant files, but it does not by itself provide a reliable map of those relationships. When agents lack that map, they can produce answers that sound plausible while missing the dependencies and operational context that matter most.\n\nThis talk explores why code is not just text, and how a knowledge graph adds structured, traversable context to AI-assisted software engineering. We will look at nodes and relationships across source code, projects, merge requests, pipelines, deployments, and ownership, and show how multi-hop queries help answer practical questions such as: What depends on this service? What could break if we change it? Which pipeline or deployment path is involved? Who owns the affected components?\n\nThe session will then show how GitLab Orbit exposes this context to AI agents, including GitLab Duo Agent Platform and external tools through the Model Context Protocol, or MCP. In a live demo, William Arias will ask the same question with and without graph-backed context, highlighting the difference between an agent that searches fragments of a codebase and one that can traverse the relationships across an entire software system.\n\nThe goal is not to replace developers’ judgment. It is to give developers and their agents a more complete, permission-aware view of the systems they are changing, so they can move faster with greater confidence and fewer surprises.\n\nKey takeaways:\n\n- Why semantic RAG alone can hit a ceiling for complex, interconnected codebases\n- How a knowledge graph complements code search and semantic retrieval\n- How graph-backed context supports impact analysis, dependency mapping, and safer refactoring\n- How MCP connects Orbit to AI-assisted development workflows\n- What the difference looks like in practice, through a live Orbit demo",
     "Speaker names": ["William Arias (GitLab)"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T16:20:00+01:00",
-    "End": "2026-11-11T16:55:00+01:00",
+    "Start": "2026-11-11T15:40:00+01:00",
+    "End": "2026-11-11T16:15:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -440,7 +440,7 @@
   },
   {
     "ID": "WL109",
-    "Proposal title": "Lunch break & booths",
+    "Proposal title": "Lunch break",
     "Session type": { "en": "Lunch" },
     "Track": null,
     "Tags": null,
@@ -448,7 +448,7 @@
     "Speaker names": [],
     "Room": { "en": "Restaurant" },
     "Start": "2026-11-11T12:10:00+01:00",
-    "End": "2026-11-11T13:30:00+01:00",
+    "End": "2026-11-11T12:50:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -461,8 +461,8 @@
     "Description": "Over the past few years, Amadeus has been accelerating GenAI adoption across an engineering community of 11,000+ engineers. René Jullien, leading the Amadeus AI acceleration, will share how this journey is shaping the way teams build software and the broader AI-DLC transformation.\n\nLooking at the landscape in 2026, René will explore where large language models, AI agents and agentic development tools stand, how they fit into the software development lifecycle, and what their growing capabilities mean at scale, both for the engineers and their company. The session offers a guided view of the fast-moving GenAI and agentic technology landscape, grounded in Amadeus's experience and the choices ahead.",
     "Speaker names": ["René Jullien"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T13:30:00+01:00",
-    "End": "2026-11-11T14:05:00+01:00",
+    "Start": "2026-11-11T12:50:00+01:00",
+    "End": "2026-11-11T13:25:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -475,8 +475,8 @@
     "Description": "Security operations are at a turning point. As organizations embrace AI, cloud-native architectures, and increasingly complex digital ecosystems, security teams face a growing challenge: defending more assets, processing more signals, and responding faster than ever before. Traditional SOC workflows, built around manual investigation and fragmented tooling, simply cannot scale to meet these demands.\n\nACTI-X was created to reimagine security operations for the AI era.\n\nIn this session, we will showcase how ACTI-X brings together threat intelligence, AI-powered investigation, security analytics, automation, and intelligent agents into a unified platform that helps security teams move from reactive alert handling to proactive cyber defense. Rather than focusing on a single use case, ACTI-X serves as an operational intelligence layer that enables analysts to understand threats faster, automate repetitive tasks, enrich investigations with actionable context, and make better security decisions at scale.\n\nWe will share the platform's architecture, the challenges of building AI into mission-critical security workflows, and lessons learned from integrating large language models, agentic reasoning, and security data pipelines into a real-world operational environment. Attendees will see how ACTI-X helps reduce investigation time, improve analyst efficiency, and lay the foundation for low-touch and autonomous security operations without sacrificing trust, transparency, or operational control.\n\nWhether you're building AI-powered platforms, operating large-scale services, or exploring how intelligent agents can augment engineering teams, this session offers a practical perspective on applying AI to one of the most demanding operational domains: cybersecurity.",
     "Speaker names": ["Yash Agarwal"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T13:30:00+01:00",
-    "End": "2026-11-11T14:05:00+01:00",
+    "Start": "2026-11-11T12:50:00+01:00",
+    "End": "2026-11-11T13:25:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -489,8 +489,8 @@
     "Description": "Every platform team asks the same two questions constantly: \"Does this new design actually fit our architecture?\" and \"Something's broken — where do I even start looking?\" Today, both questions rely on tribal knowledge and manually digging through documents, diagrams, and dashboards. We believe there's a better way: represent the architecture itself — its components, dependencies, and topology, not just its documentation — as a living knowledge graph, and let AI agents reason over it directly.\n\nIn this talk, I'll walk through this direction along two axes. First, automated validation: an agent that \"knows\" the architecture can flag a new solution design as inconsistent, redundant, or in conflict with an established pattern — before it ever reaches a review. Second, faster troubleshooting: when something breaks, the graph lets an engineer jump straight to the relevant components, dependencies, and blast radius, instead of piecing it together by hand. I'll cover how the graph is built and kept current, how it captures structure beyond what's written down, and how agents use it to validate and troubleshoot.\n\nExpect a candid look at both directions, and an open discussion on where knowledge graphs and AI agents could take architecture validation and troubleshooting next. Come with opinions — I'm looking for people to argue with before the next iteration.",
     "Speaker names": ["Francesco Pace"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T14:10:00+01:00",
-    "End": "2026-11-11T14:45:00+01:00",
+    "Start": "2026-11-11T13:30:00+01:00",
+    "End": "2026-11-11T14:05:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -503,8 +503,8 @@
     "Description": "Production AI agents do not fail only because of the model. They fail when the context is fragmented across databases, stale by the time it reaches the agent, too large for the context window, or impossible to secure and observe.\n\nIn this deep dive, we will build a holiday travel-operations agent around a governed MongoDB AI context layer. The workflow will combine operational and unstructured data, hybrid keyword and vector retrieval, deterministic filtering, geospatial constraints, bounded graph-style context expansion, short- and long-term memory, and auditable agent state. We will show how to choose the right retrieval pattern for each step instead of applying GraphRAG everywhere, then examine the production concerns that determine whether the system can scale: latency, context pruning, workload isolation, security, observability, evaluation, model flexibility, and AI cost management.\n\nThe outcome is a practical architecture for moving from a RAG prototype to a reliable production agent while minimizing synchronization paths and unnecessary technology sprawl. Attendees will leave with a decision framework, reference flow, and concrete implementation patterns they can adapt to their own AI platform.",
     "Speaker names": ["Thomas Scott (MongoDB)"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T14:10:00+01:00",
-    "End": "2026-11-11T14:45:00+01:00",
+    "Start": "2026-11-11T13:30:00+01:00",
+    "End": "2026-11-11T14:05:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -517,8 +517,8 @@
     "Description": "Speakers: Vincent Corniglion & James Searby\n\nDigital is the front door to Amadeus. Every traveler request enters through it before traversing dozens of distributed systems. When incidents occur, symptoms appear at the edge, while the root cause often hides several dependencies away. As systems, releases, and operational complexity continue to grow, traditional investigation methods based on manual log correlation simply do not scale.\n\nThe industry often frames AIOps as a model problem. We believe it is first an observability problem.\n\nModern AI models are already remarkably capable. What they lack is not intelligence, but access to the right operational signals. Just as engineers do not investigate incidents by reading every log line, AI agents should not be expected to reason over raw telemetry alone. They need structured visibility, meaningful context, and purpose-built tools that expose the signals that matter.\n\nOur journey starts with end-to-end OpenTelemetry adoption. By extending distributed tracing across both the application and service integration layers, we built a comprehensive and standardized view of production call flows. But tracing is only the beginning. The real objective is to transform operational expertise into reusable investigation capabilities: enriched telemetry, high-quality span attributes, and targeted investigation tools that allow AI agents to navigate production systems with the same methodology as experienced operators.\n\nWe will share the results of an ongoing proof of concept in which AI-assisted investigations leverage distributed traces, operational knowledge, and investigation tooling to diagnose real Digital incidents. Early findings show a clear pattern: model quality matters, but investigation quality is primarily determined by the quality of observability and the tools placed in the model's hands.\n\nAttendees will leave with a practical blueprint for scaling operations in an increasingly complex environment: how OpenTelemetry, enriched observability, and investigation tooling together create the foundation for autonomous investigation, predictive operations, and the next generation of AIOps.\n\nThe lesson is simple: the models are ready. The challenge is making sure our tools are too.",
     "Speaker names": ["Vincent Cornilion", "James Searby"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T14:50:00+01:00",
-    "End": "2026-11-11T15:25:00+01:00",
+    "Start": "2026-11-11T14:10:00+01:00",
+    "End": "2026-11-11T14:45:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -531,8 +531,8 @@
     "Description": "Most of what an engineering team does all day is move work through a loop. A bug comes in, or an incident, or someone wants a feature. Somebody decides whether it matters. Somebody writes the fix. Somebody else reviews it and runs the tests. It ships, and then it breaks something. It accumulates, and at every step there is a person holding it together.\n\nThis session is about rebuilding it so it runs from signal to shipped change on its own, with people designing, checking and governing the system rather than working inside it. We call the result a software factory.\n\nAt Factory, a lot of what we learned is unglamorous: you cannot hand complex work to an agent without an automatic way of checking the result, so the first job in most codebases is linters, type checks and tests, not AI. Some of it surprised us. The expensive model is often the cheap one once you count what a finished code review actually costs, and the model matters less than the layer around it. And if a system is learning how your engineering organisation works, you should be the one who owns what it learns.\n\nWe'll walk through which parts of the loop we handed over first, how we tell whether a codebase is ready, and where it still falls over.",
     "Speaker names": ["Harley Chen (Fabric)"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T14:50:00+01:00",
-    "End": "2026-11-11T15:25:00+01:00",
+    "Start": "2026-11-11T14:10:00+01:00",
+    "End": "2026-11-11T14:45:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -544,8 +544,8 @@
     "Description": "",
     "Speaker names": [],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T15:25:00+01:00",
-    "End": "2026-11-11T15:40:00+01:00",
+    "Start": "2026-11-11T14:45:00+01:00",
+    "End": "2026-11-11T15:00:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -558,8 +558,8 @@
     "Description": "Why spend thousands on infrastructure to analyze data you can process in minutes on your own machine?\n\nIn this session, we'll challenge the assumption that every data problem requires a cloud platform, Spark cluster, or data lake. Through real examples using the R package data.table and the lightning-fast DuckDB, you'll see how modern laptops can comfortably handle gigabytes of CSV and Parquet data with remarkable speed and efficiency. We'll explore practical techniques for querying, transforming, and visualizing large datasets, while leveraging AI assistants such as Copilot and Cowork to generate code, build analyses, and accelerate data exploration.\n\nThe session concludes with a complete analytical workflow, from raw files to interactive Quarto reports, Reactable tables, and Shiny dashboards. If you've forgotten just how powerful your laptop really is, this session might change your perspective.",
     "Speaker names": ["Juan Lorenzo Arellano Hernandez"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T15:40:00+01:00",
-    "End": "2026-11-11T16:15:00+01:00",
+    "Start": "2026-11-11T15:00:00+01:00",
+    "End": "2026-11-11T15:35:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -572,8 +572,8 @@
     "Description": "Internal Developer Platforms were originally built to help developers discover, understand, and operate the software ecosystem around them. As AI-assisted engineering evolves, they are increasingly being designed with the vision of becoming a trusted source of context and knowledge for both engineers and AI-powered assistants.\n\nIn this session, we will share lessons learned from our ongoing journey to evolve successful local Backstage capabilities into reusable enterprise platform services. Combining Platform Engineering and User Experience perspectives, we will discuss the architectural, organizational, and adoption challenges that emerge when scaling platform capabilities beyond a single team.\n\nUsing concrete examples and real-world trade-offs, we will examine how platform teams can scale successful local initiatives into enterprise capabilities, and why discoverability, ownership, and well-structured workflows are becoming critical foundations for AI-assisted engineering.",
     "Speaker names": ["Céline Petit", "Xavier Abello"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T15:40:00+01:00",
-    "End": "2026-11-11T16:15:00+01:00",
+    "Start": "2026-11-11T15:00:00+01:00",
+    "End": "2026-11-11T15:35:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -599,8 +599,8 @@
     "Description": "Renewing and redeploying F5 TLS certificates used to mean manual tickets, manual Venafi approvals, and manual SSH into load balancers: slow, error-prone, and impossible to scale.\n\nThis talk shows how we rebuilt that process with an AI coding agent as a real engineering partner: an Ansible pipeline that discovers expiring certs, opens and routes tickets, renews them in Venafi, deploys across F5 clusters, and validates the result with real production bugs diagnosed and fixed through AI-assisted debugging along the way.\n\nWe'll cover what changes when an agent can read logs and iterate on real failures, the hours reclaimed per renewal, and what it means for skills, workflow, and IP when AI writes a large share of the code.\n\nA real system, in production, with the receipts.",
     "Speaker names": ["Cristina de Dios González"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T16:20:00+01:00",
-    "End": "2026-11-11T16:55:00+01:00",
+    "Start": "2026-11-11T15:40:00+01:00",
+    "End": "2026-11-11T16:15:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -613,8 +613,8 @@
     "Description": "AI is moving into the operations loop, and the question is no longer whether it can help but how to make it genuinely useful, trustworthy, and sustainable at scale. This session shares practical experience turning AI assistants into dependable teammates for AIOps — and, because it matters at scale, how to do that without the token bill spiralling out of control.\n\nDriven entirely by hands-on experience and real examples, we cover three parts:\n\n1. Which Model to Use (ai-cli-eval) — a deterministic, multi-judge benchmark that answers \"which model, in which CLI, for which task?\" It replaces guesswork with evidence and produces a practical recommendation that measures the cost-per-quality of each AI model.\n\n2. Give AI a Memory (map-loci) — a tool that gives AI persistent, local memory, so it retains intent, decisions, and prior work across sessions. It understands the operator's work in any AIOps role instead of starting from zero every time — which also turns recurring re-explanation into a one-time cost.\n\n3. Bridge AI to Amadeus (dispatcher) — a tool that bridges AI to the Amadeus ecosystem through a single connection, giving scoped access to enterprise systems with security gates built in, and a far lighter context footprint than wiring a dozen MCP tools separately.",
     "Speaker names": ["Randy Lerma", "Richard Patra"],
     "Room": { "en": "Room A" },
-    "Start": "2026-11-11T17:00:00+01:00",
-    "End": "2026-11-11T17:35:00+01:00",
+    "Start": "2026-11-11T16:20:00+01:00",
+    "End": "2026-11-11T16:55:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
@@ -627,21 +627,21 @@
     "Description": "AI agents are only as good as what they remember, and in production, memory can't be an afterthought. This session explores how a leading fashion retailer builds production-grade AI agents through three live examples running on real infrastructure: an AWS Cost Analyzer spanning 17 accounts, a DevOps Incident Analyzer coordinating seven specialized sub-agents in parallel, and an Elastic IaC Proposer that creates GitOps changes and autonomously opens merge requests.\n\nThe right foundation brings together unstructured data, full-text search, hybrid search, and vector and semantic search, without stitching together separate stores for each type of memory.\n\nSee how to give agents the context they need, when they need it, at production scale.",
     "Speaker names": ["Fabrice Leray (Couchbase)"],
     "Room": { "en": "Room B" },
-    "Start": "2026-11-11T17:00:00+01:00",
-    "End": "2026-11-11T17:35:00+01:00",
+    "Start": "2026-11-11T16:20:00+01:00",
+    "End": "2026-11-11T16:55:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
     "ID": "WL123",
-    "Proposal title": "Afterwork",
+    "Proposal title": "Afterwork & experts/partners booths",
     "Session type": { "en": "Afterwork" },
     "Track": null,
     "Tags": null,
     "Description": "",
     "Speaker names": [],
     "Room": { "en": "Restaurant" },
-    "Start": "2026-11-11T17:35:00+01:00",
-    "End": "2026-11-11T19:00:00+01:00",
+    "Start": "2026-11-11T16:55:00+01:00",
+    "End": "2026-11-11T18:30:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   }
 ]
