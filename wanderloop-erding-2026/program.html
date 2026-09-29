@@ -1328,7 +1328,12 @@
             }).join('');
 
             const roomCols = safeRooms.map(room => {
-                const roomSessions = sessions.filter(s => (s.room || 'General') === room);
+                const roomSessions = sessions.filter(s => {
+                    const isRoomBreak = String(s.type || '').trim().toLowerCase() === 'break';
+                    const belongsToRoom = (s.room || 'General') === room;
+                    const sharedBreakRoom = isRoomBreak && ['Room A', 'Room B'].includes(room) && ['Room A', 'Room B'].includes(s.room);
+                    return belongsToRoom || sharedBreakRoom;
+                });
                 const lanes = computeOverlapLanes(roomSessions);
                 const lines = slots.map(minute => `<div class="timeline-grid-line" style="top:${(minute - startMin) * ppm}px"></div>`).join('');
                 const cards = roomSessions.map(s => {
