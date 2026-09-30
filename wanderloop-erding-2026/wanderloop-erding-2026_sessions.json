@@ -1,7 +1,7 @@
 [
   {
     "ID": "WL001",
-    "Proposal title": "Welcome & Registration",
+    "Proposal title": "Welcome & registration",
     "Session type": {
       "en": "Welcome"
     },
@@ -18,7 +18,7 @@
   },
   {
     "ID": "WL002",
-    "Proposal title": "Leadership Perspective: Shaping the Future of Operations",
+    "Proposal title": "Leadership perspective: shaping the future of operations",
     "Session type": {
       "en": "Talk"
     },
@@ -39,7 +39,7 @@
   },
   {
     "ID": "WL003",
-    "Proposal title": "Transforming IT operations in an AI World",
+    "Proposal title": "Transforming IT operations in an AI world",
     "Session type": {
       "en": "Talk"
     },
@@ -79,7 +79,7 @@
   },
   {
     "ID": "WL005A",
-    "Proposal title": "AI First Journey – Network and Observability",
+    "Proposal title": "AI-first journey – network and observability",
     "Session type": {
       "en": "Breakout session"
     },
@@ -100,7 +100,7 @@
   },
   {
     "ID": "WL005B",
-    "Proposal title": "The Human Side of AI Transformation",
+    "Proposal title": "The human side of AI transformation",
     "Session type": {
       "en": "Breakout session"
     },
@@ -122,7 +122,7 @@
   },
   {
     "ID": "WL005C",
-    "Proposal title": "The Financial Side of AI Transformation",
+    "Proposal title": "The financial side of AI transformation",
     "Session type": {
       "en": "Breakout session"
     },
@@ -143,7 +143,7 @@
   },
   {
     "ID": "WL006",
-    "Proposal title": "External Speaker",
+    "Proposal title": "External speaker",
     "Session type": {
       "en": "Talk"
     },
@@ -162,7 +162,7 @@
   },
   {
     "ID": "WL007",
-    "Proposal title": "Closing Remarks",
+    "Proposal title": "Closing remarks",
     "Session type": {
       "en": "Closing"
     },
@@ -179,7 +179,7 @@
   },
   {
     "ID": "WL008A",
-    "Proposal title": "AI OPS at the Example of Network Automation",
+    "Proposal title": "AI Ops at the example of network automation",
     "Session type": {
       "en": "Networking booth"
     },
@@ -200,7 +200,7 @@
   },
   {
     "ID": "WL008B",
-    "Proposal title": "AIOps – Transformation of Operational Processes: Cloud Platform Bot & Self-Healing",
+    "Proposal title": "AIOps – transformation of operational processes: Cloud Platform Bot & Self-Healing",
     "Session type": {
       "en": "Networking booth"
     },
@@ -222,7 +222,7 @@
   },
   {
     "ID": "WL008C",
-    "Proposal title": "AI-Assisted Incident Management: VictorAI and Cordellia Demo",
+    "Proposal title": "AI-assisted incident management: VictorAI and Cordellia demo",
     "Session type": {
       "en": "Networking booth"
     },
@@ -243,7 +243,7 @@
   },
   {
     "ID": "WL008D",
-    "Proposal title": "AI-Assisted Change Management with NowAssist (ServiceNow)",
+    "Proposal title": "AI-assisted change management with NowAssist (ServiceNow)",
     "Session type": {
       "en": "Networking booth"
     },

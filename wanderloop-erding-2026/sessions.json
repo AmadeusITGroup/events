@@ -1,7 +1,7 @@
 [
   {
     "ID": "WL001",
-    "Proposal title": "Welcome & Registration",
+    "Proposal title": "Welcome & registration",
     "Session type": {
       "en": "Welcome"
     },
@@ -18,7 +18,7 @@
   },
   {
     "ID": "WL002",
-    "Proposal title": "Leadership Perspective: Shaping the Future of Operations",
+    "Proposal title": "Leadership perspective: shaping the future of operations",
     "Session type": {
       "en": "Keynote"
     },
@@ -40,7 +40,7 @@
   },
   {
     "ID": "WL003",
-    "Proposal title": "Transforming IT operations in an AI World",
+    "Proposal title": "Transforming IT operations in an AI world",
     "Session type": {
       "en": "Talk"
     },
@@ -84,7 +84,7 @@
   },
   {
     "ID": "WL005A",
-    "Proposal title": "AI-Driven Journey – Network and observability",
+    "Proposal title": "AI-driven journey – network and observability",
     "Session type": {
       "en": "Breakout session"
     },
@@ -106,7 +106,7 @@
   },
   {
     "ID": "WL005B",
-    "Proposal title": "The Human Side of AI Transformation",
+    "Proposal title": "The human side of AI transformation",
     "Session type": {
       "en": "Breakout session"
     },
@@ -129,7 +129,7 @@
   },
   {
     "ID": "WL005C",
-    "Proposal title": "The Financial Side of AI Transformation",
+    "Proposal title": "The financial side of AI transformation",
     "Session type": {
       "en": "Breakout session"
     },
@@ -151,7 +151,7 @@
   },
   {
     "ID": "WL006",
-    "Proposal title": "Industrial Data intelligence at Siemens",
+    "Proposal title": "Industrial data intelligence at Siemens",
     "Session type": {
       "en": "Talk"
     },
@@ -173,7 +173,7 @@
   },
   {
     "ID": "WL007",
-    "Proposal title": "Closing Remarks",
+    "Proposal title": "Closing remarks",
     "Session type": {
       "en": "Closing"
     },
@@ -190,7 +190,7 @@
   },
   {
     "ID": "WL008A",
-    "Proposal title": "AIOps and Network Automation",
+    "Proposal title": "AIOps and network automation",
     "Session type": {
       "en": "Networking booth"
     },
@@ -211,7 +211,7 @@
   },
   {
     "ID": "WL008B",
-    "Proposal title": "AIOps – Transformation of Operational Processes: Cloud Platform Bot & Self-Healing",
+    "Proposal title": "AIOps – transformation of operational processes: Cloud Platform Bot & Self-Healing",
     "Session type": {
       "en": "Networking booth"
     },
@@ -233,7 +233,7 @@
   },
   {
     "ID": "WL008C",
-    "Proposal title": "AI-Assisted Incident Management: a demo",
+    "Proposal title": "AI-assisted incident management: a demo",
     "Session type": {
       "en": "Networking booth"
     },
@@ -254,7 +254,7 @@
   },
   {
     "ID": "WL008D",
-    "Proposal title": "AI-Assisted Change Management with NowAssist (ServiceNow)",
+    "Proposal title": "AI-assisted change management with NowAssist (ServiceNow)",
     "Session type": {
       "en": "Networking booth"
     },
@@ -299,7 +299,7 @@
 
   {
     "ID": "WL099",
-    "Proposal title": "Welcome & Registration",
+    "Proposal title": "Welcome & registration",
     "Session type": {
       "en": "Welcome"
     },
@@ -329,7 +329,7 @@
   },
   {
     "ID": "WL101",
-    "Proposal title": "Oops, my Agent Ruined the World: How to Build Resilient Systems That Don't Fail",
+    "Proposal title": "Oops, my agent ruined the world: how to build resilient systems that don't fail",
     "Session type": { "en": "Keynote" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -343,7 +343,7 @@
   },
   {
     "ID": "WL102",
-    "Proposal title": "Do we Need MCP in our Agentic Apps if we Already Have REST APIs?",
+    "Proposal title": "Do we need MCP in our agentic apps if we already have REST APIs?",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -357,7 +357,7 @@
   },
   {
     "ID": "WL103",
-    "Proposal title": "AI Agents Need a Map: Knowledge Graphs for AI-Driven Engineering at Scale",
+    "Proposal title": "AI agents need a map: knowledge graphs for AI-driven engineering at scale",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -384,7 +384,7 @@
   },
   {
     "ID": "WL105",
-    "Proposal title": "AI Inference Sovereignty: Serving LLMs is a Memory Problem",
+    "Proposal title": "AI inference sovereignty: serving LLMs is a memory problem",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -398,7 +398,7 @@
   },
   {
     "ID": "WL106",
-    "Proposal title": "Your AI Budget is Already Running",
+    "Proposal title": "Your AI budget is already running",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -412,7 +412,7 @@
   },
   {
     "ID": "WL107",
-    "Proposal title": "Foreman: Building and Deploying Configurations with AI and an MCP Server",
+    "Proposal title": "Foreman: building and deploying configurations with AI and an MCP server",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -426,7 +426,7 @@
   },
   {
     "ID": "WL108",
-    "Proposal title": "Prompt Registry: the Open Source Package Manager for GenAI Assets",
+    "Proposal title": "Prompt Registry: the open source package manager for GenAI assets",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -453,7 +453,7 @@
   },
   {
     "ID": "WL110",
-    "Proposal title": "AI Models: Where Do we Stand in Nov 2026?",
+    "Proposal title": "AI models: where do we stand in Nov 2026?",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -467,7 +467,7 @@
   },
   {
     "ID": "WL111",
-    "Proposal title": "ACT-X: Transforming Security Operations Through AI, Automation and Threat Intelligence",
+    "Proposal title": "ACT-X: transforming security operations through AI, automation and threat intelligence",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AIOps" },
     "Tags": null,
@@ -481,7 +481,7 @@
   },
   {
     "ID": "WL112",
-    "Proposal title": "Two Questions Every Ops Team Asks, Answered by a Knowledge Graph",
+    "Proposal title": "Two questions every ops team asks, answered by a knowledge graph",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AIOps" },
     "Tags": null,
@@ -495,7 +495,7 @@
   },
   {
     "ID": "WL113",
-    "Proposal title": "From RAG to Production Agents: Building the AI Context Layer with MongoDB",
+    "Proposal title": "From RAG to production agents: building the AI context layer with MongoDB",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -509,7 +509,7 @@
   },
   {
     "ID": "WL114",
-    "Proposal title": "Observability as the Foundation for AIOps – Giving AI the Right Tools for Autonomous Investigation",
+    "Proposal title": "Observability as the foundation for AIOps – giving AI the right tools for autonomous investigation",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AIOps" },
     "Tags": null,
@@ -523,7 +523,7 @@
   },
   {
     "ID": "WL115",
-    "Proposal title": "Closing the Loop: What it Takes for Software to Start Maintaining Itself",
+    "Proposal title": "Closing the loop: what it takes for software to start maintaining itself",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -550,7 +550,7 @@
   },
   {
     "ID": "WL117",
-    "Proposal title": "The Most Underutilized Data Platform in the Company? Your Laptop!",
+    "Proposal title": "The most underutilized data platform in the company? Your laptop!",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -564,7 +564,7 @@
   },
   {
     "ID": "WL118",
-    "Proposal title": "From Dev Portal to AI Grounding Layer: Scaling Backstage capabilities for humans & AI agents",
+    "Proposal title": "From Dev Portal to AI grounding layer: scaling Backstage capabilities for humans & AI agents",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -578,7 +578,7 @@
   },
   {
     "ID": "WL119",
-    "Proposal title": "FinOps for AI: How to understand and optimize the cost of AI?",
+    "Proposal title": "FinOps for AI: how to understand and optimize the cost of AI?",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
@@ -591,7 +591,7 @@
   },
   {
     "ID": "WL120",
-    "Proposal title": "The Certificate That Renews Itself: a Case Study in AI-Driven Engineering",
+    "Proposal title": "The certificate that renews itself: a case study in AI-driven engineering",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
@@ -605,7 +605,7 @@
   },
   {
     "ID": "WL121",
-    "Proposal title": "AIOps Tokenomics",
+    "Proposal title": "AIOps tokenomics",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AIOps" },
     "Tags": null,
@@ -619,7 +619,7 @@
   },
   {
     "ID": "WL122",
-    "Proposal title": "Stop Paying for Data Sprawl: A Better Memory for AI Agents",
+    "Proposal title": "Stop paying for data sprawl: a better memory for AI agents",
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
