@@ -15,7 +15,8 @@
   "registerUrl-2026-11-10": "https://forms.cloud.microsoft/e/NANjt1AJwF",
   "registerUrl-2026-11-11": "https://forms.cloud.microsoft/e/fLGAE8nsR4",
   "showCfp": false,
-  "showFeedback": false,
+  "showFeedback": true,
+  "openFeedbackBaseUrl": "https://openfeedback.io/OWKPfp0MqAlWWyOUR776",
   "useLiveProgramStats": true,
   "description": "Welcome to Amadeus Wanderloop @ Erding 2026, a conference organized by the Amadeus Developer Relations team.",
   "locations": [
