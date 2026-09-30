@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Speaker silhouette placeholder</title>
+  <defs>
+    <radialGradient id="backlight" cx="50%" cy="34%" r="75%">
+      <stop offset="0" stop-color="#f1d9ff"/>
+      <stop offset="0.22" stop-color="#c56cff"/>
+      <stop offset="0.5" stop-color="#7b23bd"/>
+      <stop offset="0.78" stop-color="#321052"/>
+      <stop offset="1" stop-color="#0a0612"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#backlight)"/>
+  <circle cx="256" cy="180" r="96" fill="#050208"/>
+  <path fill="#050208" d="M256 300c-116 0-180 90-180 212h360c0-122-64-212-180-212z"/>
+</svg>
