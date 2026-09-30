@@ -92,7 +92,7 @@
       "PFS"
     ],
     "Room": {
-      "en": "Breakout room A"
+      "en": "Room MUC.B1.118"
     },
     "Start": "2026-11-10T15:30:00+01:00",
     "End": "2026-11-10T16:15:00+01:00",
@@ -114,7 +114,7 @@
       "Richard Patra"
     ],
     "Room": {
-      "en": "Breakout room B"
+      "en": "Room MUC.B1.021"
     },
     "Start": "2026-11-10T15:30:00+01:00",
     "End": "2026-11-10T16:15:00+01:00",
@@ -135,7 +135,7 @@
       "Volker Machmeier"
     ],
     "Room": {
-      "en": "Breakout room C"
+      "en": "Room MUC.B1.128"
     },
     "Start": "2026-11-10T15:30:00+01:00",
     "End": "2026-11-10T16:15:00+01:00",

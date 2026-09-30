@@ -1304,11 +1304,9 @@
         }
 
         function renderTimelineDay(dayLabel, sessions) {
-            const rooms = [...new Set(sessions.map(s => s.room).filter(Boolean))].sort((left, right) => {
-                if (left === 'Restaurant') return 1;
-                if (right === 'Restaurant') return -1;
-                return left.localeCompare(right);
-            });
+            const rooms = [...new Set(sessions.map(s => s.room).filter(Boolean))].sort((left, right) =>
+                left.localeCompare(right)
+            );
             const safeRooms = rooms.length ? rooms : ['General'];
             const starts = sessions.map(s => s.start.getHours() * 60 + s.start.getMinutes());
             const ends = sessions.map(s => s.start.getHours() * 60 + s.start.getMinutes() + s.durationMins);
@@ -1331,7 +1329,7 @@
                 const roomSessions = sessions.filter(s => {
                     const isRoomBreak = String(s.type || '').trim().toLowerCase() === 'break';
                     const belongsToRoom = (s.room || 'General') === room;
-                    const sharedBreakRoom = isRoomBreak && ['Room A', 'Room B'].includes(room) && ['Room A', 'Room B'].includes(s.room);
+                    const sharedBreakRoom = isRoomBreak && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021'].includes(room) && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021'].includes(s.room);
                     return belongsToRoom || sharedBreakRoom;
                 });
                 const lanes = computeOverlapLanes(roomSessions);
