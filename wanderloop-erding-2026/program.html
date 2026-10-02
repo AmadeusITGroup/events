@@ -1120,7 +1120,7 @@
             const start = session.Start ? new Date(session.Start) : null;
             const end = session.End ? new Date(session.End) : null;
             if (!start || Number.isNaN(start.getTime())) return null;
-            const durationMins = end && !Number.isNaN(end.getTime()) ? Math.max(15, Math.round((end - start) / 60000)) : 45;
+            const durationMins = end && !Number.isNaN(end.getTime()) ? Math.round((end - start) / 60000) : 45;
             return {
                 id: session.ID || session.id || Math.random().toString(36).slice(2),
                 title: session['Proposal title'] || session.title || 'Untitled',
