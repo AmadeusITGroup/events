@@ -529,7 +529,7 @@
     "Tags": null,
     "Level": "Intermediate",
     "Description": "Most of what an engineering team does all day is move work through a loop. A bug comes in, or an incident, or someone wants a feature. Somebody decides whether it matters. Somebody writes the fix. Somebody else reviews it and runs the tests. It ships, and then it breaks something. It accumulates, and at every step there is a person holding it together.\n\nThis session is about rebuilding it so it runs from signal to shipped change on its own, with people designing, checking and governing the system rather than working inside it. We call the result a software factory.\n\nAt Factory, a lot of what we learned is unglamorous: you cannot hand complex work to an agent without an automatic way of checking the result, so the first job in most codebases is linters, type checks and tests, not AI. Some of it surprised us. The expensive model is often the cheap one once you count what a finished code review actually costs, and the model matters less than the layer around it. And if a system is learning how your engineering organisation works, you should be the one who owns what it learns.\n\nWe'll walk through which parts of the loop we handed over first, how we tell whether a codebase is ready, and where it still falls over.",
-    "Speaker names": ["Harley Chen (Fabric)"],
+    "Speaker names": ["Harley Chen (Factory)"],
     "Room": { "en": "Room MUC.B1.021" },
     "Start": "2026-11-11T14:10:00+01:00",
     "End": "2026-11-11T14:45:00+01:00",
