@@ -373,8 +373,8 @@ function renderAboutSection(event) {
     }
 
     const locEl = document.getElementById('event-locations');
-    if (locEl && Array.isArray(event.locations) && event.locations.length) {
-        locEl.innerHTML = `Hosted at ${event.locations.map(location => `<strong>${location}</strong>`).join(', ')}.`;
+    if (locEl) {
+        locEl.innerHTML = 'The event is hosted at <strong>Amadeus Data Processing GmbH</strong>';
     }
 }
 
