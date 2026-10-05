@@ -60,8 +60,20 @@
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const scheduleAdjustment = href === '#schedule' ? -16 : 0;
-                const offsetTop = target.offsetTop - 80 + scheduleAdjustment;
+                let offsetTop = target.offsetTop - 80;
+                if (href === '#schedule') {
+                    const dateHeading = target.querySelector('.day-header h2');
+                    if (dateHeading) {
+                        const navbar = document.querySelector('.navbar');
+                        const filtersSection = document.querySelector('.filters-section');
+                        const navbarBottom = navbar ? navbar.getBoundingClientRect().bottom : 80;
+                        const stickyFiltersHeight = filtersSection && !filtersSection.classList.contains('filters-not-sticky')
+                            ? filtersSection.getBoundingClientRect().height
+                            : 0;
+                        const dateDocumentTop = window.scrollY + dateHeading.getBoundingClientRect().top;
+                        offsetTop = dateDocumentTop - navbarBottom - stickyFiltersHeight - 8;
+                    }
+                }
                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
             }
         }
