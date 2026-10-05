@@ -894,7 +894,7 @@
         }
 
         function getTrackColor(name) {
-            if (!name) return '#ff2fb2';
+            if (!name) return '#0CBFE8';
             if (!trackColorCache[name]) {
                 const index = hashTrackName(name) % FLASHY_TRACK_PALETTE.length;
                 trackColorCache[name] = ensureWhiteTextContrast(FLASHY_TRACK_PALETTE[index]);

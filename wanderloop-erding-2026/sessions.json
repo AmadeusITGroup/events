@@ -648,7 +648,9 @@
     "ID": "WL124",
     "Proposal title": "AI Compliance",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Mayada Omer"],
@@ -661,7 +663,9 @@
     "ID": "WL125",
     "Proposal title": "AI FinOps",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Volker Machmeier"],
@@ -674,7 +678,9 @@
     "ID": "WL126",
     "Proposal title": "Amadeus AI Fusion Lab",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI-empowered teams"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Xu He"],
@@ -687,7 +693,9 @@
     "ID": "WL127",
     "Proposal title": "MongoDB",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Thomas Scott"],
@@ -700,7 +708,9 @@
     "ID": "WL128",
     "Proposal title": "Scality",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Erwan Girard"],
@@ -713,7 +723,9 @@
     "ID": "WL129",
     "Proposal title": "GitLab",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["William Arias"],
@@ -726,7 +738,9 @@
     "ID": "WL130",
     "Proposal title": "Couchbase",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": {
+      "en": "AI platforms at scale"
+    },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Fabrice Leray"],
