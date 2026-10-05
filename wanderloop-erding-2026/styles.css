@@ -36,6 +36,23 @@
     .mobile-menu-toggle {
         display: flex;
     }
+
+    .nav-links .nav-separator {
+        font-size: 1rem;
+        width: auto;
+        height: auto;
+        background: none;
+        align-self: center;
+        margin: calc(var(--spacing-xs) * 0.5) 0;
+    }
+
+    .nav-links .nav-separator-horizontal {
+        display: none;
+    }
+
+    .nav-links .nav-separator-vertical {
+        display: inline;
+    }
 }
 
 .amadeus-logo-lockup {
