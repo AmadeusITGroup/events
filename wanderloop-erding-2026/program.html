@@ -1350,7 +1350,7 @@
                 return `<div class="timeline-room-col" style="height:${height}px">${lines}${cards}</div>`;
             }).join('');
 
-            const roomHeaders = safeRooms.map(r => `<div><span class="timeline-room-chip">${r}</span></div>`).join('');
+            const roomHeaders = safeRooms.map(r => `<div><span class="timeline-room-chip">📍 ${r}</span></div>`).join('');
             const sessionsChip = pluralize(sessions.length, 'session').replace(' ', '&nbsp;');
             const roomsChip = pluralize(safeRooms.length, 'room').replace(' ', '&nbsp;');
             return `<div class="schedule-day"><div class="day-header"><h2>${dayLabel}</h2><span class="session-count session-count-split"><span class="session-count-chip">${sessionsChip}</span><span class="session-count-connector">across</span><span class="session-count-chip">${roomsChip}</span></span></div><div class="timeline-wrapper"><div class="timeline-scroll"><div class="timeline-inner" style="--room-count:${safeRooms.length}"><div class="timeline-head"><div></div>${roomHeaders}</div><div class="timeline-body"><div class="timeline-time-col" style="height:${height}px">${timeMarks}</div>${roomCols}</div></div></div><div class="timeline-scroll-cue"><span class="timeline-scroll-cue-tag"><span>scroll for more</span><span class="timeline-scroll-cue-arrow">→</span></span></div></div></div>`;
