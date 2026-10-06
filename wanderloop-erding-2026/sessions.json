@@ -243,7 +243,7 @@
     "Tags": null,
     "Description": "Live demonstration of AI-assisted incident management using VictorAI and Cordellia. See how these tools reduce mean time to resolution (MTTR) and automate incident triage, enrichment, and routing.",
     "Speaker names": [
-      "Pierre-Luc Noel"
+      "Fritz Reichmann"
     ],
     "Room": {
       "en": "Restaurant"
@@ -296,7 +296,26 @@
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
 
-
+  {
+    "ID": "WL008F",
+    "Proposal title": "ACTI-X (Advanced Cyber Threat Information eXchange)",
+    "Session type": {
+      "en": "Networking booth"
+    },
+    "Track": null,
+    "Tags": null,
+    "Description": "",
+    "Speaker names": [
+      "Yash Agarwal",
+      "Alejandro Cornejo"
+    ],
+    "Room": {
+      "en": "Restaurant"
+    },
+    "Start": "2026-11-10T17:30:00+01:00",
+    "End": "2026-11-10T19:00:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
   {
     "ID": "WL099",
     "Proposal title": "Welcome & registration",
