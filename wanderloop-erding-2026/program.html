@@ -255,7 +255,7 @@
             gap: var(--spacing-md);
         }
         .session-card {
-            background: var(--card-bg);
+            background: color-mix(in srgb, var(--card-bg) 92%, var(--track-color));
             border: 2px solid var(--border-color);
             border-radius: var(--radius-lg);
             overflow: hidden;
@@ -494,9 +494,9 @@
             right: auto;
             box-sizing: border-box;
             border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--secondary);
-            background: var(--card-bg);
+            border: 1px solid var(--track-color);
+            border-left-width: 4px;
+            background: color-mix(in srgb, var(--card-bg) 92%, var(--track-color));
             padding: 0.35rem 0.45rem;
             overflow: hidden;
             z-index: 1;
@@ -508,7 +508,7 @@
             left: 0.3rem;
             width: calc(100% - 0.6rem);
             z-index: 20;
-            border-color: rgba(255, 88, 172, 0.65);
+            border-color: var(--track-color);
             box-shadow: 0 0 0 1px rgba(255, 88, 172, 0.24), 0 0 8px rgba(255, 88, 172, 0.18), 0 0 16px rgba(255, 88, 172, 0.12);
         }
         .timeline-session.can-expand:hover {
@@ -1243,7 +1243,7 @@
         }
 
         function renderGridDay(dayLabel, sessions) {
-            return `<div class="schedule-day"><div class="day-header"><h2>${dayLabel}</h2><span class="session-count">${pluralize(sessions.length, 'session')}</span></div><div class="sessions-grid">${sessions.map(s => `<article class="session-card" data-session-code="${s.id}"><div class="session-track-bar" style="background: ${getTrackColor(s.track)}"></div><div class="session-content"><div class="session-meta"><span class="session-time">${formatClock(s.start)}</span>${s.type ? `<span class="session-type">${s.type}</span>` : ''}</div><h3 class="session-title">${s.title}</h3>${s.speakers ? `<p class="session-speakers">${s.speakers}</p>` : ''}${s.track ? `<span class="session-track" style="background:${getTrackColor(s.track)}">${s.track}</span>` : ''}${s.level ? `<span class="session-level">Level: ${s.level}</span>` : ''}${s.room ? `<div class="session-card-footer">${renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}<span class="session-room">📍 ${s.room}</span></div>` : renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}</div></article>`).join('')}</div></div>`;
+            return `<div class="schedule-day"><div class="day-header"><h2>${dayLabel}</h2><span class="session-count">${pluralize(sessions.length, 'session')}</span></div><div class="sessions-grid">${sessions.map(s => `<article class="session-card" data-session-code="${s.id}" style="--track-color:${getTrackColor(s.track)}"><div class="session-track-bar" style="background: ${getTrackColor(s.track)}"></div><div class="session-content"><div class="session-meta"><span class="session-time">${formatClock(s.start)}</span>${s.type ? `<span class="session-type">${s.type}</span>` : ''}</div><h3 class="session-title">${s.title}</h3>${s.speakers ? `<p class="session-speakers">${s.speakers}</p>` : ''}${s.track ? `<span class="session-track" style="background:${getTrackColor(s.track)}">${s.track}</span>` : ''}${s.level ? `<span class="session-level">Level: ${s.level}</span>` : ''}${s.room ? `<div class="session-card-footer">${renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}<span class="session-room">📍 ${s.room}</span></div>` : renderFeedbackLink(s, 'feedback-link', 'Give Feedback')}</div></article>`).join('')}</div></div>`;
         }
 
         function computeOverlapLanes(roomSessions) {
@@ -1345,7 +1345,7 @@
                     const compactTime = `<div class="timeline-session-time${compactTimeClass}">${formatClock(s.start)}&nbsp;&nbsp;•&nbsp;&nbsp;${s.type || 'Session'}${s.level ? `&nbsp;&nbsp;•&nbsp;&nbsp;<span class="timeline-session-level">${s.level}</span>` : ''}</div>`;
                     const compactSpeakers = (!isCompact && s.speakers) ? `<div class="timeline-session-speaker">${s.speakers}</div>` : '';
                     const compactFeedback = isCompact ? '' : renderFeedbackLink(s, 'timeline-session-feedback', 'Give Feedback', 'Open feedback form');
-                    return `<article class="timeline-session${compactCardClass}" data-session-code="${s.id}" data-lane-count="${laneInfo.laneCount}" style="top:${top}px;height:${h}px;--lane-index:${laneInfo.lane};--lane-count:${laneInfo.laneCount};border-left-color:${getTrackColor(s.track)}">${compactTime}<div class="timeline-session-title${compactTitleClass}">${s.title}</div>${compactSpeakers}${compactFeedback}</article>`;
+                    return `<article class="timeline-session${compactCardClass}" data-session-code="${s.id}" data-lane-count="${laneInfo.laneCount}" style="top:${top}px;height:${h}px;--lane-index:${laneInfo.lane};--lane-count:${laneInfo.laneCount};--track-color:${getTrackColor(s.track)}">${compactTime}<div class="timeline-session-title${compactTitleClass}">${s.title}</div>${compactSpeakers}${compactFeedback}</article>`;
                 }).join('');
                 return `<div class="timeline-room-col" style="height:${height}px">${lines}${cards}</div>`;
             }).join('');
