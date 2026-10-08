@@ -9,42 +9,27 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .program-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark-accent) 50%, var(--secondary) 100%);
-            padding: calc(80px + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
-            text-align: center;
+            background: #1a0730 url('../shared/backgrounds/amadeus-waves-gradient.jpg') center / cover no-repeat;
+            padding: calc(80px + clamp(2rem, 6vw, 4rem)) var(--spacing-md) clamp(2rem, 6vw, 4rem);
+            text-align: left;
             position: relative;
             overflow: hidden;
         }
-        .program-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('../shared/backgrounds/amadeus-waves-white.svg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.12;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .program-hero .container { position: relative; z-index: 1; }
         .program-hero h1 {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 900;
+            line-height: 1.05;
+            text-align: center;
             color: #ffffff;
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
         }
         .program-hero .subtitle {
-            font-size: 1.15rem;
-            color: var(--highlight-light);
-            margin-bottom: 0.55rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.88);
+            text-align: center;
         }
         .program-hero .amadeus-logo-lockup {
-            margin-top: -0.2rem;
-            margin-bottom: 1.8rem;
+            margin: 0 0 var(--spacing-sm);
         }
         .program-dates-wrapper {
             display: flex;

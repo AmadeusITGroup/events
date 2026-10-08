@@ -95,15 +95,26 @@
     padding: 5rem 0 4rem;
 }
 
+.nav-links a.faq-link,
+.footer-links a.faq-link {
+    color: #3a8bff;
+}
+
+.nav-links a.faq-link::after,
+.footer-links a.faq-link::after {
+    background: #3a8bff;
+}
+
 .faq-intro {
     overflow: hidden;
     margin-bottom: var(--spacing-lg);
     padding: clamp(2rem, 6vw, 4rem) 0;
     color: #ffffff;
     background-color: #1a0730;
-    background-image:
-        repeating-radial-gradient(ellipse 125% 520% at -16% -164%, transparent 0 10.7%, rgba(220, 0, 255, 0.78) 10.85% 11%, transparent 11.15% 17.5%),
-        linear-gradient(110deg, #180927 0%, #27075f 57%, #192aa5 100%);
+    background-image: url('../shared/backgrounds/amadeus-waves-gradient.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .faq-intro h1 {
@@ -185,14 +196,10 @@
     margin: 0 0 1rem;
 }
 
-.faq-item p a {
-    color: #9b0050;
+.faq-item a {
+    color: #3a8bff;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.15em;
-}
-
-[data-theme="dark"] .faq-item p a {
-    color: #ff8bc7;
 }
 
 .faq-contact {
@@ -345,7 +352,7 @@
     position: sticky;
     top: calc(var(--spacing-sm) * 2 + 1.5rem);
     z-index: 10;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--dark-accent) 50%, var(--secondary) 100%);
+    background: #1a0730 url('../shared/backgrounds/amadeus-waves-gradient.jpg') center / cover no-repeat;
     padding: var(--spacing-lg) var(--spacing-md) calc(var(--spacing-lg) - 20px);
     display: flex;
     flex-direction: row;
