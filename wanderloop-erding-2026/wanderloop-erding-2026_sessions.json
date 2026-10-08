@@ -10,7 +10,7 @@
     "Description": "Coffee and refreshments served.",
     "Speaker names": [],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T13:00:00+01:00",
     "End": "2026-11-10T13:30:00+01:00",
@@ -31,7 +31,7 @@
       "Sven Fuhrmeister"
     ],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T13:30:00+01:00",
     "End": "2026-11-10T13:45:00+01:00",
@@ -52,7 +52,7 @@
       "Slobodan Stefanovic"
     ],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T13:45:00+01:00",
     "End": "2026-11-10T14:30:00+01:00",
@@ -69,9 +69,11 @@
     },
     "Tags": null,
     "Description": "Speaker: Mistral AI\r\n\r\nAn external perspective on AIOps from Mistral AI, exploring how large language models and AI capabilities can transform IT operations.",
-    "Speaker names": [],
+    "Speaker names": [
+      "Felix Wegner (Mistral AI)"
+    ],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T14:30:00+01:00",
     "End": "2026-11-10T15:15:00+01:00",
@@ -89,7 +91,9 @@
     "Tags": null,
     "Description": "A focused breakout discussion on the AI-first journey in network automation and observability. Exploring how AI is transforming how we monitor, detect, and respond to network events.",
     "Speaker names": [
-      "PFS"
+      "Sebastian Weber",
+      "Sheng-Chia Yu",
+      "Lucas Weglarz"
     ],
     "Room": {
       "en": "Room MUC.B1.118"
@@ -152,9 +156,11 @@
     },
     "Tags": null,
     "Description": "External speaker session — to be announced.",
-    "Speaker names": [],
+    "Speaker names": [
+      "ZheTao Dong (Siemens)"
+    ],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T16:30:00+01:00",
     "End": "2026-11-10T17:15:00+01:00",
@@ -171,7 +177,7 @@
     "Description": "Closing remarks and wrap-up of the Wanderloop Erding 2026 AIOps event.",
     "Speaker names": [],
     "Room": {
-      "en": "Auditorium"
+      "en": "Room MUC.D1.053"
     },
     "Start": "2026-11-10T17:15:00+01:00",
     "End": "2026-11-10T17:30:00+01:00",
@@ -189,7 +195,7 @@
     "Tags": null,
     "Description": "Interactive booth station showcasing AIOps applied to network automation. Explore real use cases, exchange with experts, and discover how AI is transforming network operations at Amadeus.",
     "Speaker names": [
-      "PFS"
+      "Christopher Schmalz"
     ],
     "Room": {
       "en": "Booths area"
