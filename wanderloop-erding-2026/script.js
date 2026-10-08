@@ -1,6 +1,8 @@
 // Event-specific JavaScript
 // Loads config.json and renders index.html from config-driven data.
 
+(function () {
+
 // ============================================================================
 // URL Parameter & Date Filter Utilities
 // ============================================================================
@@ -80,10 +82,16 @@ function updateHomeLinks() {
         indexUrl += (indexUrl.includes('?') ? '&' : '?') + 'simpleView';
     }
     
-    // Update all Home links
-    const homeLinks = document.querySelectorAll('a[href="index.html"]');
-    homeLinks.forEach(link => {
-        link.href = indexUrl;
+    const eventPages = ['index.html', 'program.html', 'faq.html', 'privacy.html'];
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!eventPages.includes(href.split('?')[0].split('#')[0])) return;
+        const url = new URL(href, window.location.href);
+        if (dateParam && isValidEventDate(dateParam)) {
+            url.searchParams.set('date', dateParam);
+        }
+        if (hasSimpleView) url.searchParams.set('simpleView', '');
+        link.href = url.pathname.split('/').pop() + url.search + url.hash;
     });
 }
 
@@ -133,8 +141,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch('config.json', { cache: 'no-store' });
         const event = await response.json();
-        await updateProgramLinks(event);
-        renderEvent(event);
+        if (isValidEventDate(window.currentDateFilter)) {
+            showRegisterLink(getRegisterHref(event, window.currentDateFilter));
+        } else {
+            hideRegisterLink();
+        }
+        if (document.querySelector('.hero-title')) {
+            await updateProgramLinks(event);
+            renderEvent(event);
+        }
     } catch (err) {
         console.warn('Could not load config.json:', err);
     }
@@ -456,10 +471,10 @@ function showCfpLink(cfpHref) {
 }
 
 function showRegisterLink(registerHref) {
-    const nav = document.getElementById('register-nav-link');
+    const nav = document.querySelector('.nav-links [id$="register-nav-link"]');
     const hero = document.getElementById('register-hero-cta');
     const contact = document.getElementById('register-contact-cta');
-    const footer = document.getElementById('register-footer-link');
+    const footer = document.querySelector('.footer-links [id$="register-footer-link"]');
 
     if (nav) {
         setLinkAttributes(nav, registerHref);
@@ -492,10 +507,10 @@ function hideCfpLink() {
 }
 
 function hideRegisterLink() {
-    const nav = document.getElementById('register-nav-link');
+    const nav = document.querySelector('.nav-links [id$="register-nav-link"]');
     const hero = document.getElementById('register-hero-cta');
     const contact = document.getElementById('register-contact-cta');
-    const footer = document.getElementById('register-footer-link');
+    const footer = document.querySelector('.footer-links [id$="register-footer-link"]');
 
     if (nav) nav.style.display = 'none';
     if (hero) hero.style.display = 'none';
@@ -697,3 +712,5 @@ function formatLiveDateRange(start, end) {
     }
     return `${start.toLocaleDateString('en-GB', fullOpts)} - ${end.toLocaleDateString('en-GB', fullOpts)}`;
 }
+
+})();

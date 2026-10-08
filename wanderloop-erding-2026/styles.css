@@ -70,8 +70,8 @@
     gap: var(--spacing-md);
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-md) var(--spacing-lg);
-    border-left: 5px solid var(--accent);
-    background: rgba(255, 88, 172, 0.09);
+    border-left: 5px solid #3a8bff;
+    background: rgba(58, 139, 255, 0.09);
 }
 
 .about-faq-callout h3,
@@ -83,7 +83,14 @@
     margin-top: 0.25rem;
 }
 
-.about-faq-callout .btn-primary:hover {
+.about-faq-callout .btn-primary {
+    background: #3a8bff;
+    border-color: #3a8bff;
+    color: #ffffff;
+}
+
+.about-faq-callout .btn-primary:hover,
+[data-theme="dark"] .about-faq-callout .btn-primary:hover {
     background: transparent;
     color: var(--accent);
     border-color: var(--accent);
