@@ -63,6 +63,162 @@
     margin: 0.5rem 0 var(--spacing-md);
 }
 
+.about-faq-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-left: 5px solid var(--accent);
+    background: rgba(255, 88, 172, 0.09);
+}
+
+.about-faq-callout h3,
+.about-faq-callout p {
+    margin: 0;
+}
+
+.about-faq-callout p {
+    margin-top: 0.25rem;
+}
+
+.about-faq-callout .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: none;
+    transform: none;
+}
+
+.faq-page {
+    padding: 5rem 0 4rem;
+}
+
+.faq-intro {
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    padding: clamp(2rem, 6vw, 4rem) 0;
+    color: #ffffff;
+    background-color: #1a0730;
+    background-image:
+        repeating-radial-gradient(ellipse 125% 520% at -16% -164%, transparent 0 10.7%, rgba(220, 0, 255, 0.78) 10.85% 11%, transparent 11.15% 17.5%),
+        linear-gradient(110deg, #180927 0%, #27075f 57%, #192aa5 100%);
+}
+
+.faq-intro h1 {
+    margin-bottom: var(--spacing-xs);
+    color: #ffffff;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.faq-intro p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.faq-categories a {
+    color: #ffffff;
+    text-decoration-color: #ff58ac;
+    text-underline-offset: 0.25em;
+}
+
+.faq-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.faq-category {
+    margin-top: var(--spacing-lg);
+    scroll-margin-top: 6rem;
+}
+
+.faq-category h2 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.faq-travel-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+}
+
+.faq-travel-mode {
+    min-width: 0;
+}
+
+.faq-travel-mode h3 {
+    margin-bottom: 0.25rem;
+}
+
+.faq-travel-duration {
+    margin-bottom: var(--spacing-xs);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .faq-travel-duration {
+    color: var(--highlight-light);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item summary {
+    padding: 1rem 0;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .faq-item summary {
+    color: var(--secondary);
+}
+
+.faq-item p {
+    margin: 0 0 1rem;
+}
+
+.faq-item p a {
+    color: #9b0050;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+[data-theme="dark"] .faq-item p a {
+    color: #ff8bc7;
+}
+
+.faq-contact {
+    margin-top: var(--spacing-lg);
+}
+
+.faq-contact .btn {
+    display: flex;
+    width: fit-content;
+    margin-top: var(--spacing-md);
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+    .faq-intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-faq-callout {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: var(--spacing-md);
+    }
+}
+
 .amadeus-logo {
     height: clamp(28px, 4vw, 42px);
     width: auto;

@@ -97,6 +97,7 @@
     --bg-color: #ffffff;
     --text-color: #26005a;
     --text-secondary: #4f0230;
+    --link-color: #6d1f7a;
     --card-bg: #ffffff;
     --border-color: #e4c7ff;
     --shadow: rgba(38, 0, 90, 0.1);
@@ -125,6 +126,7 @@
     --bg-color: #0f0a1a;
     --text-color: #ffffff;
     --text-secondary: #e4c7ff;
+    --link-color: #ff8bc7;
     --card-bg: #1a0f2e;
     --border-color: #4f0230;
     --shadow: rgba(182, 80, 255, 0.2);
@@ -146,6 +148,20 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 3px;
+}
+
+.faq-page ul {
+    margin: 0 0 1rem 1.25rem;
+    padding-left: 1.25rem;
 }
 
 .container {
@@ -267,6 +283,15 @@ body {
 
 .nav-links a.program-link::after {
     background: var(--secondary);
+}
+
+.nav-links a.faq-link {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.nav-links a.faq-link::after {
+    background: var(--accent);
 }
 
 .nav-separator {
@@ -499,6 +524,7 @@ body {
 }
 
 .arrow {
+    display: inline-block;
     transition: transform 0.3s ease;
 }
 
@@ -594,6 +620,20 @@ body {
 }
 
 .footer-links a.program-link:hover::after {
+    width: 0;
+}
+
+.footer-links a.faq-link {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.footer-links a.faq-link::after {
+    width: 100%;
+    background: var(--accent);
+}
+
+.footer-links a.faq-link:hover::after {
     width: 0;
 }
 
