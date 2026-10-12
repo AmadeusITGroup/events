@@ -604,7 +604,7 @@
     "Track": { "en": "AI platforms at scale" },
     "Tags": null,
     "Description": "AI spending is rising rapidly, yet it remains challenging to understand, report on, and allocate these costs.\n\nThis session shares our practical experience building a FinOps approach for AI, starting with a fundamental question: what should count as an AI cost?\n\nA clear, consistent definition enabled us to develop reporting, forecasting, and allocation capabilities grounded in token unit economics and established FinOps principles.",
-    "Speaker names": ["Julien Maria"],
+    "Speaker names": ["Julien Maria, Nishanth Kandaswamy Subramanian"],
     "Room": { "en": "Room MUC.B1.021" },
     "Start": "2026-11-11T10:00:00+01:00",
     "End": "2026-11-11T10:35:00+01:00",
