@@ -389,7 +389,7 @@ function renderAboutSection(event) {
 
     const locEl = document.getElementById('event-locations');
     if (locEl) {
-        locEl.innerHTML = 'The event is hosted at <strong>Amadeus Data Processing GmbH</strong>';
+        locEl.innerHTML = 'The event is hosted at <strong>Amadeus GmbH</strong>';
     }
 }
 
