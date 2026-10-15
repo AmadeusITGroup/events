@@ -1679,7 +1679,7 @@
 
             let raw = [];
             try {
-                const response = await fetch('sessions.json');
+                const response = await fetch('sessions.json', { cache: 'no-store' });
                 if (!response.ok) throw new Error('sessions.json missing');
                 raw = await response.json();
             } catch (err) {
