@@ -460,6 +460,20 @@
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
+    "ID": "WL125",
+    "Proposal title": "Stop tokenmaxxing: give your hungry agent the right data",
+    "Session type": { "en": "Talk" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Level": "Intermediate",
+    "Description": "Your agent just read 50,000 rows to answer a question a stream processor could settle deterministically. There is a better split: connectors capture changes, Flink handles joins, filters and business rules, and the agent focuses on anomalies and decisions.\n\nWhere does a connector end and MCP begin? When should code decide, and when should the model reason? We will trace data from source to a small, fresh, governed context, then look at how Stream, Connect, Process, Govern and Query make that data useful to agents through MCP or REST and to dashboards through JDBC.\n\nThe goal: fewer tokens, fresher answers and dashboards people can trust. A practical systems-design discussion about choosing the right engine for each job, not a product pitch.",
+    "Speaker names": ["Senad Jukic (Confluent)"],
+    "Room": { "en": "Room MUC.D1.053" },
+    "Start": "2026-11-11T12:05:00+01:00",
+    "End": "2026-11-11T12:40:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
     "ID": "WL109",
     "Proposal title": "Lunch break",
     "Session type": { "en": "Lunch" },
