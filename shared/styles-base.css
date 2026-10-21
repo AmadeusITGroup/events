@@ -560,6 +560,10 @@ a:focus-visible {
     font-weight: 700;
 }
 
+.footer-brand a {
+    text-decoration: none;
+}
+
 .footer-tagline {
     margin-top: var(--spacing-xs);
     opacity: 0.8;
