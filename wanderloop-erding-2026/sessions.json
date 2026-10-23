@@ -768,5 +768,18 @@
     "Start": "2026-11-11T16:45:00+01:00",
     "End": "2026-11-11T17:45:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL131",
+    "Proposal title": "Confluent",
+    "Session type": { "en": "Networking booth" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Senad Jukic"],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T16:45:00+01:00",
+    "End": "2026-11-11T17:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
   }
 ]
