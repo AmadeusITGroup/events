@@ -781,5 +781,18 @@
     "Start": "2026-11-11T16:45:00+01:00",
     "End": "2026-11-11T17:45:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL132",
+    "Proposal title": "AI-assisted change management with NowAssist (ServiceNow)",
+    "Session type": { "en": "Networking booth" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "Explore how NowAssist from ServiceNow brings AI-assisted change management capabilities to Amadeus operations. Learn how AI helps assess change risk, suggest remediation steps, and accelerate change approval workflows.",
+    "Speaker names": ["Carsten Schinzer", "Thomas Stoeckl"],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T16:45:00+01:00",
+    "End": "2026-11-11T17:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
   }
 ]
