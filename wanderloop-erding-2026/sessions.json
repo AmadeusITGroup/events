@@ -529,6 +529,19 @@
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
+    "ID": "WL133",
+    "Proposal title": "Introduction to Amadeus",
+    "Session type": { "en": "Talk" },
+    "Track": null,
+    "Tags": null,
+    "Description": "This session introduces Amadeus and its role in travel technology. It offers an overview of how Amadeus connects travelers and travel providers, and how its technology supports the journeys and operations that make travel possible.\n\nKey takeaway: Attendees will leave with a clearer picture of what Amadeus does, how it fits into the travel ecosystem, and how its technology supports everyday travel experiences.",
+    "Speaker names": ["Monika Erhart"],
+    "Room": { "en": "Room MUC.D1.053" },
+    "Start": "2026-11-11T11:25:00+01:00",
+    "End": "2026-11-11T12:00:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
     "ID": "WL113",
     "Proposal title": "From RAG to production agents: building the AI context layer with MongoDB",
     "Session type": { "en": "Talk" },
