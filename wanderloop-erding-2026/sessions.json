@@ -62,7 +62,7 @@
   },
   {
     "ID": "WL004",
-    "Proposal title": "AIOps, by Mistral AI",
+    "Proposal title": "AI That Ships: From Experiments to Production Systems",
     "Session type": {
       "en": "Talk"
     },
@@ -71,7 +71,7 @@
     },
     "Tags": null,
     "Level": "Beginner",
-    "Description": "An external perspective on AIOps from Mistral AI, exploring how large language models and AI capabilities can transform IT operations.",
+    "Description": "Every enterprise has AI demos. Very few have AI in production. Demos need to work when one is prepared to look. Production systems need to work when nobody looks. At latency, volume, and resource efficiency.\n\nThis talk is about crossing that gap: what separates the organizations efficiently running AI at scale from those stuck in endless experimentation. The choices they make around use cases. The engineering discipline they apply to the system around the model. And the rigor of running AI like any other production software - from economics to governance.\n\nDrawing on real-world enterprise deployments, this session shares what it actually takes, technically and organizationally, to turn AI from a source of demos into a dependable part of operations.",
     "Speaker names": [
       "Felix Wegner (Mistral AI)"
     ],
