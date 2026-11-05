@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live program | Wanderloop Erding 2026</title>
+    <link rel="stylesheet" href="../shared/styles-base.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="liveprogram.css">
+    <script src="../shared/script-base.js" defer></script>
+    <script src="liveprogram.js" defer></script>
+</head>
+<body>
+    <header class="live-hero">
+        <div class="container">
+            <p class="live-eyebrow">Wanderloop Erding 2026</p>
+            <p class="live-subtitle">What's happening in each room, right now.</p>
+            <p class="live-clock"><time id="live-clock"></time> &middot; Erding time (Europe/Berlin)</p>
+        </div>
+    </header>
+
+    <main class="container live-main">
+        <div class="live-summary" role="status" aria-live="polite" aria-atomic="true">
+            <h2 id="live-heading">Loading sessions...</h2>
+            <p id="live-description">The program updates automatically.</p>
+        </div>
+        <p id="live-error" role="alert" hidden></p>
+        <div class="live-stage">
+            <div id="live-rooms" class="live-rooms" aria-labelledby="live-heading"></div>
+        </div>
+        <noscript><p>JavaScript is required to show the live program. Please enable it and reload this page.</p></noscript>
+        <footer class="live-footer">
+            <p class="live-note">Updates every 10s. Erding local time. <a href="program.html">Browse the full program</a>.</p>
+            <p id="simulation-notice" hidden>
+                <span class="simulation-label">Simulation mode</span> Time is frozen.
+                <a id="live-mode-link" href="liveprogram.html">Return to live time</a>
+            </p>
+        </footer>
+    </main>
+</body>
+</html>
