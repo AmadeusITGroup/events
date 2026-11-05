@@ -87,7 +87,8 @@ function updateHomeLinks() {
         const href = link.getAttribute('href');
         if (!eventPages.includes(href.split('?')[0].split('#')[0])) return;
         const url = new URL(href, window.location.href);
-        if (dateParam && isValidEventDate(dateParam)) {
+        // Date cards carry their own date; don't overwrite it with the current one
+        if (dateParam && isValidEventDate(dateParam) && !link.classList.contains('date-card')) {
             url.searchParams.set('date', dateParam);
         }
         if (hasSimpleView) url.searchParams.set('simpleView', '');
