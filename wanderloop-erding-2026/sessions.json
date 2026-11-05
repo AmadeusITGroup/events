@@ -468,7 +468,7 @@
     "Level": "Intermediate",
     "Description": "Your agent just read 50,000 rows to answer a question a stream processor could settle deterministically. There is a better split: connectors capture changes, Flink handles joins, filters and business rules, and the agent focuses on anomalies and decisions.\n\nWhere does a connector end and MCP begin? When should code decide, and when should the model reason? We will trace data from source to a small, fresh, governed context, then look at how Stream, Connect, Process, Govern and Query make that data useful to agents through MCP or REST and to dashboards through JDBC.\n\nThe goal: fewer tokens, fresher answers and dashboards people can trust. A practical systems-design discussion about choosing the right engine for each job, not a product pitch.",
     "Speaker names": ["Senad Jukic (Confluent)"],
-    "Room": { "en": "Room MUC.D1.053" },
+    "Room": { "en": "Room MUC.B1.128" },
     "Start": "2026-11-11T12:05:00+01:00",
     "End": "2026-11-11T12:40:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
@@ -536,7 +536,7 @@
     "Tags": null,
     "Description": "This session introduces Amadeus and its role in travel technology. It offers an overview of how Amadeus connects travelers and travel providers, and how its technology supports the journeys and operations that make travel possible.\n\nKey takeaway: Attendees will leave with a clearer picture of what Amadeus does, how it fits into the travel ecosystem, and how its technology supports everyday travel experiences.",
     "Speaker names": ["Monika Erhart"],
-    "Room": { "en": "Room MUC.D1.053" },
+    "Room": { "en": "Room MUC.B1.128" },
     "Start": "2026-11-11T11:25:00+01:00",
     "End": "2026-11-11T12:00:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
