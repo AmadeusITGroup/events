@@ -30,21 +30,22 @@
         if (!count || width <= 0 || height <= 0) return;
 
         function applyLayout(columns, scale) {
-            roomsElement.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
+            roomsElement.style.gridTemplateColumns = `repeat(${columns}, minmax(min-content, 1fr))`;
             roomsElement.style.width = `${width / scale}px`;
             roomsElement.style.transform = `scale(${scale})`;
         }
 
         let bestScale = 0;
         let bestColumns = 1;
-        // Measure actual wrapped content to keep the largest layout that fits.
+        // Fit both dimensions without squeezing words or time ranges into narrow columns.
         for (let columns = 1; columns <= count; columns++) {
             let lower = 0;
             let upper = 1;
             for (let step = 0; step < 12; step++) {
                 const scale = (lower + upper) / 2;
                 applyLayout(columns, scale);
-                if (roomsElement.getBoundingClientRect().height <= height - 2) {
+                if (roomsElement.scrollWidth <= roomsElement.clientWidth
+                    && roomsElement.getBoundingClientRect().height <= height - 2) {
                     lower = scale;
                 } else {
                     upper = scale;

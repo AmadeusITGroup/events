@@ -38,11 +38,6 @@ body {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.live-subtitle {
-    font-size: clamp(1rem, 1.2vw, 1.75rem);
-    grid-column: 1;
-}
-
 .live-clock {
     grid-column: 2;
     grid-row: 2;
@@ -143,7 +138,7 @@ body {
     background: var(--track-color);
     box-shadow: 0 12px 32px var(--shadow);
     overflow: hidden;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
 }
 
 .live-room h3 {
@@ -175,6 +170,7 @@ body {
     font-size: clamp(1.4rem, 1.7vw, 2.75rem);
     line-height: 1.2;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 .live-time-separator {
@@ -277,23 +273,20 @@ body {
 
 .simulation-label {
     display: inline-block;
-    padding: 0.2em 0.6em;
+    padding: 0 0.6em;
+    vertical-align: baseline;
     margin-right: 0.4em;
     border-radius: var(--radius-sm);
     background: #e4c7ff;
     color: #26005a;
-    font-size: 0.9em;
-    letter-spacing: 0.05em;
+    font: inherit;
+    letter-spacing: inherit;
 }
 
 @media (min-width: 1200px) {
     .live-eyebrow {
         grid-column: 1;
         grid-row: 1;
-    }
-
-    .live-subtitle {
-        display: none;
     }
 
     .live-clock {
