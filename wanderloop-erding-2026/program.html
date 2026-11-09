@@ -1322,7 +1322,7 @@
                 const roomSessions = sessions.filter(s => {
                     const isRoomBreak = String(s.type || '').trim().toLowerCase() === 'break';
                     const belongsToRoom = (s.room || 'General') === room;
-                    const sharedBreakRoom = isRoomBreak && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021'].includes(room) && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021'].includes(s.room);
+                    const sharedBreakRoom = isRoomBreak && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021', 'Room MUC.D1.053'].includes(room) && ['Room A', 'Room B', 'Room MUC.B1.118', 'Room MUC.B1.021', 'Room MUC.D1.053'].includes(s.room);
                     return belongsToRoom || sharedBreakRoom;
                 });
                 const lanes = computeOverlapLanes(roomSessions);
