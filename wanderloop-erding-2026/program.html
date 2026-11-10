@@ -496,7 +496,8 @@
             border-color: var(--track-color);
             box-shadow: 0 0 0 1px rgba(255, 88, 172, 0.24), 0 0 8px rgba(255, 88, 172, 0.18), 0 0 16px rgba(255, 88, 172, 0.12);
         }
-        .timeline-session.can-expand:hover {
+        .timeline-session.can-expand:hover,
+        .timeline-session.compact:hover {
             height: max-content !important;
             overflow: visible;
         }
@@ -534,6 +535,17 @@
             text-overflow: ellipsis;
         }
         .timeline-session-speaker { font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.12rem; }
+        .timeline-session.compact .timeline-session-speaker {
+            display: none;
+        }
+        .timeline-session.compact:hover .timeline-session-speaker {
+            display: block;
+        }
+        .timeline-session.compact:hover .timeline-session-time,
+        .timeline-session.compact:hover .timeline-session-title {
+            white-space: normal;
+            overflow: visible;
+        }
         .timeline-session-feedback {
             margin-top: 0.25rem;
             font-size: 0.68rem;
@@ -1336,7 +1348,7 @@
                     const compactTimeClass = isCompact ? ' compact' : '';
                     const compactTitleClass = isCompact ? ' compact' : '';
                     const compactTime = `<div class="timeline-session-time${compactTimeClass}">${formatClock(s.start)}&nbsp;&nbsp;•&nbsp;&nbsp;${s.type || 'Session'}${s.level ? `&nbsp;&nbsp;•&nbsp;&nbsp;<span class="timeline-session-level">${s.level}</span>` : ''}</div>`;
-                    const compactSpeakers = (!isCompact && s.speakers) ? `<div class="timeline-session-speaker">${s.speakers}</div>` : '';
+                    const compactSpeakers = s.speakers ? `<div class="timeline-session-speaker">${s.speakers}</div>` : '';
                     const compactFeedback = isCompact ? '' : renderFeedbackLink(s, 'timeline-session-feedback', 'Give Feedback', 'Open feedback form');
                     return `<article class="timeline-session${compactCardClass}" data-session-code="${s.id}" data-lane-count="${laneInfo.laneCount}" style="top:${top}px;height:${h}px;--lane-index:${laneInfo.lane};--lane-count:${laneInfo.laneCount};--track-color:${getTrackColor(s.track)}">${compactTime}<div class="timeline-session-title${compactTitleClass}">${s.title}</div>${compactSpeakers}${compactFeedback}</article>`;
                 }).join('');
