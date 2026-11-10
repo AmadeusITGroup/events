@@ -342,7 +342,7 @@
     "Track": null,
     "Tags": null,
     "Description": "",
-    "Speaker names": [],
+    "Speaker names": ["Sven Fuhrmeister", "Laurent Dollé"],
     "Room": { "en": "Restaurant" },
     "Start": "2026-11-11T09:00:00+01:00",
     "End": "2026-11-11T09:15:00+01:00",
