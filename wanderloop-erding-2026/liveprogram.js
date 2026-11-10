@@ -17,11 +17,16 @@
     const description = document.getElementById('live-description');
     const errorElement = document.getElementById('live-error');
     const clock = document.getElementById('live-clock');
+    const feedbackDisabledTypes = new Set([
+        'lunch', 'break', 'introduction', 'welcome', 'afterwork', 'networking booth', 'closing'
+    ]);
     let sessions = null;
     let renderedKey = null;
     let loading = false;
     let simulatedTime = null;
     let fitFrame = null;
+    let showFeedback = false;
+    let feedbackBaseUrl = '';
 
     function fitCards() {
         const count = roomsElement.children.length;
@@ -96,11 +101,13 @@
                 throw new Error(`Invalid schedule information for session ${index + 1}.`);
             }
             return {
+                id: session?.ID || session?.id || '',
                 start, end, room, title,
                 type: localizedText(session['Session type']),
                 level: localizedText(session.Level || session.level),
                 track: localizedText(session.Track),
-                speakers: (session['Speaker names'] || []).filter(Boolean).join(', ')
+                speakers: (session['Speaker names'] || []).filter(Boolean),
+                description: session.Description || session.description || ''
             };
         }).sort((left, right) => left.start - right.start || left.room.localeCompare(right.room));
     }
@@ -138,9 +145,133 @@
         card.append(time);
         if (badges.children.length) card.append(badges);
         card.append(element('h4', session.title));
-        if (session.speakers && !isNetworkingBooth) card.append(element('p', session.speakers, 'live-speakers'));
+        if (session.speakers.length && !isNetworkingBooth) {
+            card.append(element('p', session.speakers.join(', '), 'live-speakers'));
+        }
         if (session.track && !isNetworkingBooth) card.append(element('p', session.track, 'live-track'));
         return card;
+    }
+
+    function openSessionModal(session, trigger) {
+        const overlay = element('div', undefined, 'live-modal-overlay');
+        const dialog = element('div', undefined, 'live-modal');
+        dialog.dataset.track = session.track;
+        dialog.setAttribute('role', 'dialog');
+        dialog.setAttribute('aria-modal', 'true');
+        dialog.setAttribute('aria-labelledby', 'live-modal-title');
+
+        const header = element('div', undefined, 'live-modal-header');
+        const headerRow = element('div', undefined, 'live-modal-header-row');
+        const badges = element('div', undefined, 'live-modal-badges');
+        if (session.track) badges.append(element('span', session.track, 'live-modal-track'));
+        if (session.level) badges.append(element('span', session.level, 'live-modal-level'));
+        headerRow.append(badges);
+        header.append(headerRow);
+        const title = element('h2', session.title, 'live-modal-title');
+        title.id = 'live-modal-title';
+        header.append(title);
+
+        const meta = element('div', undefined, 'live-modal-meta');
+        const day = element('span', dateFormat.format(session.start));
+        const time = element('span',
+            `${clockFormat.format(session.start)} \u2192 ${clockFormat.format(session.end)} (${Math.round((session.end - session.start) / 60000)} min)`);
+        meta.append(day, time);
+        if (session.type) meta.append(element('span', session.type));
+        header.append(meta);
+
+        const closeButton = element('button', '\u00d7', 'live-modal-close');
+        closeButton.type = 'button';
+        closeButton.setAttribute('aria-label', 'Close session details');
+        headerRow.append(closeButton);
+
+        const bodyWrap = element('div', undefined, 'live-modal-body-wrap');
+        const body = element('div', undefined, 'live-modal-body');
+        if (session.speakers.length) {
+            const speakers = element('div', undefined, 'live-modal-speakers');
+            for (const speaker of session.speakers) {
+                speakers.append(element('span', speaker, 'live-modal-speaker'));
+            }
+            body.append(speakers);
+        }
+        const descriptionContent = element('div', undefined, 'live-modal-description');
+        const paragraphs = String(session.description || 'No description available.')
+            .split('\n').map(paragraph => paragraph.trim()).filter(Boolean);
+        for (const paragraph of paragraphs) descriptionContent.append(element('p', paragraph));
+        body.append(descriptionContent);
+        const fade = element('div', undefined, 'live-modal-fade is-hidden');
+        fade.setAttribute('aria-hidden', 'true');
+        bodyWrap.append(body, fade);
+
+        const footer = element('div', undefined, 'live-modal-footer');
+        const sessionType = session.type.trim().toLowerCase();
+        if (showFeedback && feedbackBaseUrl && session.id && !feedbackDisabledTypes.has(sessionType)) {
+            const feedbackLink = element('a', 'Give Feedback', 'live-modal-button live-modal-button-primary');
+            const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            icon.setAttribute('viewBox', '0 0 24 24');
+            icon.setAttribute('fill', 'none');
+            icon.setAttribute('stroke', 'currentColor');
+            icon.setAttribute('stroke-width', '2');
+            icon.setAttribute('aria-hidden', 'true');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z');
+            icon.append(path);
+            feedbackLink.prepend(icon);
+            const dayKey = new Date(session.start).toISOString().slice(0, 10);
+            feedbackLink.href = `${feedbackBaseUrl.replace(/\/$/, '')}/${dayKey}/${encodeURIComponent(session.id)}`;
+            feedbackLink.target = '_blank';
+            feedbackLink.rel = 'noopener';
+            footer.append(feedbackLink);
+        }
+        if (session.room) footer.append(element('span', `\u{1F4CD} ${session.room}`, 'live-modal-room'));
+
+        dialog.append(header, bodyWrap, footer);
+        overlay.append(dialog);
+        document.body.append(overlay);
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(() => {
+            overlay.classList.add('active');
+            closeButton.focus();
+            updateScrollState();
+        });
+
+        function updateScrollState() {
+            fade.classList.toggle('is-hidden', body.scrollTop + body.clientHeight >= body.scrollHeight - 2);
+        }
+        body.addEventListener('scroll', updateScrollState, { passive: true });
+        const resizeObserver = new ResizeObserver(updateScrollState);
+        resizeObserver.observe(body);
+
+        function close() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            document.removeEventListener('keydown', handleEscape);
+            resizeObserver.disconnect();
+            window.setTimeout(() => overlay.remove(), 200);
+            if (trigger.isConnected) trigger.focus();
+        }
+        function handleEscape(event) {
+            if (event.key === 'Escape') close();
+        }
+
+        closeButton.addEventListener('click', close);
+        overlay.addEventListener('click', event => {
+            if (event.target === overlay) close();
+        });
+        document.addEventListener('keydown', handleEscape);
+    }
+
+    async function loadFeedbackConfig() {
+        try {
+            const response = await fetch('config.json', { cache: 'no-store' });
+            if (!response.ok) throw new Error(`Event config request failed (${response.status}).`);
+            const config = await response.json();
+            showFeedback = Boolean(config.showFeedback);
+            feedbackBaseUrl = typeof config.openFeedbackBaseUrl === 'string'
+                ? config.openFeedbackBaseUrl.trim()
+                : '';
+        } catch (error) {
+            console.error('Unable to load live program feedback settings:', error);
+        }
     }
 
     function render() {
@@ -178,7 +309,18 @@
         for (const session of sortedSessions) {
             const card = element('article', undefined, 'live-room');
             card.dataset.track = session.track;
+            card.setAttribute('role', 'button');
+            card.tabIndex = 0;
+            card.setAttribute('aria-haspopup', 'dialog');
+            card.setAttribute('aria-label', `View details for ${session.title}`);
             card.append(element('h3', session.room), sessionCard(session));
+            card.addEventListener('click', () => openSessionModal(session, card));
+            card.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openSessionModal(session, card);
+                }
+            });
             roomsElement.append(card);
         }
         scheduleFit();
@@ -226,6 +368,7 @@
     }
 
     render();
+    loadFeedbackConfig();
     loadSessions();
     new ResizeObserver(scheduleFit).observe(stage);
     document.fonts.ready.then(scheduleFit);

@@ -492,7 +492,7 @@
     "Session type": { "en": "Talk" },
     "Track": { "en": "AI-empowered teams" },
     "Tags": null,
-    "Level": "All levels",
+    "Level": "Beginner",
     "Description": "You are probably already using GitHub Copilot, Kiro, Devin or Claude Code every day, in your IDE or terminal. But the market is moving much faster than our daily tools: what is really coming next?\n\nRené Jullien, Lead of the GenAI for Engineering strategy, ran Amadeus's first GitHub Copilot pilot in 2021 and has been hands-on with every new wave of AI since: models, assistants, agents and bots. He will share his reading of the market and his view of what is coming:\n\n- The market trends: the signals that really matter behind the weekly flood of announcements, and why the model is no longer the whole story.\n- From copilots to fleets of agents: what comes after the assistant in your IDE and terminal, and why it is closer than you think.\n- What it means for us: what really changes in our daily job as engineers, and how Amadeus is getting ready for it.\n\nCome with your questions and your own view of the future: this session is meant to be a conversation about where our craft is heading.",
     "Speaker names": ["René Jullien"],
     "Room": { "en": "Room MUC.D1.053" },

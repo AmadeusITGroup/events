@@ -618,10 +618,22 @@
             border-bottom: 1px solid var(--border-color);
             position: relative;
         }
+        .session-modal-header-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .session-modal-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.35rem;
+            flex: 1;
+            min-width: 0;
+        }
         .session-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+            flex: 0 0 36px;
             width: 36px;
             height: 36px;
             border-radius: 50%;
@@ -647,7 +659,6 @@
             font-size: 0.75rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.75rem;
         }
         .session-modal-level {
             display: inline-flex;
@@ -660,8 +671,6 @@
             color: #fff;
             font-size: 0.75rem;
             font-weight: 700;
-            margin-left: 0.35rem;
-            margin-bottom: 0.75rem;
         }
         .session-modal-title {
             margin: 0 0 0.5rem 0;
@@ -1510,9 +1519,13 @@
             modal.innerHTML = `
                 <div class="session-modal">
                     <div class="session-modal-header">
-                        <button class="session-modal-close" data-close-modal="1">✕</button>
-                        ${session.track ? `<span class="session-modal-track" style="background:${trackColor}">${session.track}</span>` : ''}
-                        ${session.level ? `<span class="session-modal-level">Level: ${session.level}</span>` : ''}
+                        <div class="session-modal-header-row">
+                            <div class="session-modal-badges">
+                                ${session.track ? `<span class="session-modal-track" style="background:${trackColor}">${session.track}</span>` : ''}
+                                ${session.level ? `<span class="session-modal-level">${session.level}</span>` : ''}
+                            </div>
+                            <button class="session-modal-close" data-close-modal="1" aria-label="Close session details">✕</button>
+                        </div>
                         <h2 class="session-modal-title">${session.title}</h2>
                         <div class="session-modal-meta">
                             <span>${dayLabel}</span>
@@ -1529,7 +1542,6 @@
                     </div>
                     <div class="session-modal-footer">
                         ${renderFeedbackLink(session, 'session-modal-btn session-modal-btn-primary', 'Give Feedback')}
-                        <button class="session-modal-btn session-modal-btn-secondary" data-close-modal="1">Close</button>
                         ${session.room ? `<span class="session-modal-room">📍 ${session.room}</span>` : ''}
                     </div>
                 </div>`;
