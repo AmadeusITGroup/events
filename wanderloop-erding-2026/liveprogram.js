@@ -17,6 +17,7 @@
     const description = document.getElementById('live-description');
     const errorElement = document.getElementById('live-error');
     const clock = document.getElementById('live-clock');
+    const fullProgramLink = document.getElementById('full-program-link');
     const feedbackDisabledTypes = new Set([
         'lunch', 'break', 'introduction', 'welcome', 'afterwork', 'networking booth', 'closing'
     ]);
@@ -27,6 +28,16 @@
     let fitFrame = null;
     let showFeedback = false;
     let feedbackBaseUrl = '';
+
+    const currentParams = new URLSearchParams(window.location.search);
+    const dateParam = currentParams.get('date');
+    const hasSimpleView = [...currentParams.keys()].some(key => key.toLowerCase() === 'simpleview');
+    const fullProgramParams = new URLSearchParams();
+    if (dateParam) fullProgramParams.set('date', dateParam);
+    if (hasSimpleView) fullProgramParams.set('simpleView', '');
+    if (fullProgramParams.toString()) {
+        fullProgramLink.href = `program.html?${fullProgramParams}`;
+    }
 
     function fitCards() {
         const count = roomsElement.children.length;
@@ -159,6 +170,7 @@
         dialog.setAttribute('role', 'dialog');
         dialog.setAttribute('aria-modal', 'true');
         dialog.setAttribute('aria-labelledby', 'live-modal-title');
+        dialog.tabIndex = -1;
 
         const header = element('div', undefined, 'live-modal-header');
         const headerRow = element('div', undefined, 'live-modal-header-row');
@@ -230,7 +242,7 @@
         document.body.style.overflow = 'hidden';
         requestAnimationFrame(() => {
             overlay.classList.add('active');
-            closeButton.focus();
+            dialog.focus();
             updateScrollState();
         });
 
@@ -251,6 +263,30 @@
         }
         function handleEscape(event) {
             if (event.key === 'Escape') close();
+            if (event.key !== 'Tab') return;
+
+            const focusable = [...dialog.querySelectorAll(
+                'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )].filter(element => !element.hidden && element.getAttribute('aria-hidden') !== 'true'
+                && element.getClientRects().length > 0);
+            if (!focusable.length) {
+                event.preventDefault();
+                dialog.focus();
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (document.activeElement === dialog) {
+                event.preventDefault();
+                (event.shiftKey ? last : first).focus();
+            } else if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+                event.preventDefault();
+                first.focus();
+            }
         }
 
         closeButton.addEventListener('click', close);

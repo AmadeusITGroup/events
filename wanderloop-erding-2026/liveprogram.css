@@ -285,6 +285,10 @@ body {
     animation: liveModalNeonPulse 1.8s ease-in-out infinite alternate;
 }
 
+.live-modal:focus {
+    outline: none;
+}
+
 @keyframes liveModalNeonPulse {
     from {
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 88, 172, 0.18), 0 0 10px rgba(255, 88, 172, 0.2), 0 0 18px rgba(255, 88, 172, 0.14);

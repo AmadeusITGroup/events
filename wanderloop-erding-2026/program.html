@@ -602,6 +602,9 @@
             transition: transform 0.2s;
             animation: modalNeonPulse 1.8s ease-in-out infinite alternate;
         }
+        .session-modal:focus {
+            outline: none;
+        }
         @keyframes modalNeonPulse {
             from {
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 88, 172, 0.18), 0 0 10px rgba(255, 88, 172, 0.2), 0 0 18px rgba(255, 88, 172, 0.14);
@@ -904,7 +907,7 @@
                 </div>
                 <div class="footer-links">
                     <a id="program-home-footer" href="index.html">Home</a>
-                    <a href="liveprogram.html">Live program</a>
+                    <a id="program-live-link" href="liveprogram.html">Live program</a>
                     <a id="program-cfp-footer-link" class="cfp-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Submit a talk/booth</a>
                     <a id="program-register-footer-link" class="cfp-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">Register</a>
                     <a class="faq-link" href="faq.html">FAQ</a>
@@ -1007,6 +1010,7 @@
             const hasSimpleView = [...params.keys()].some(k => k.toLowerCase() === 'simpleview');
             const homeNavLink = document.getElementById('program-home-nav');
             const homeFooterLink = document.getElementById('program-home-footer');
+            const liveProgramLink = document.getElementById('program-live-link');
             
             let homeUrl = 'index.html';
             
@@ -1022,6 +1026,16 @@
             
             if (homeNavLink) homeNavLink.href = homeUrl;
             if (homeFooterLink) homeFooterLink.href = homeUrl;
+            if (liveProgramLink) {
+                let liveProgramUrl = 'liveprogram.html';
+                if (dateFilter && (dateFilter === '2026-11-10' || dateFilter === '2026-11-11')) {
+                    liveProgramUrl += `?date=${dateFilter}`;
+                }
+                if (hasSimpleView) {
+                    liveProgramUrl += (liveProgramUrl.includes('?') ? '&' : '?') + 'simpleView';
+                }
+                liveProgramLink.href = liveProgramUrl;
+            }
         }
 
         function isSimpleViewEnabled() {
@@ -1517,7 +1531,7 @@
             const modal = document.createElement('div');
             modal.className = 'session-modal-overlay';
             modal.innerHTML = `
-                <div class="session-modal">
+                <div class="session-modal" role="dialog" aria-modal="true" aria-labelledby="session-modal-title" tabindex="-1">
                     <div class="session-modal-header">
                         <div class="session-modal-header-row">
                             <div class="session-modal-badges">
@@ -1526,7 +1540,7 @@
                             </div>
                             <button class="session-modal-close" data-close-modal="1" aria-label="Close session details">✕</button>
                         </div>
-                        <h2 class="session-modal-title">${session.title}</h2>
+                        <h2 class="session-modal-title" id="session-modal-title">${session.title}</h2>
                         <div class="session-modal-meta">
                             <span>${dayLabel}</span>
                             <span>${start} → ${end} (${session.durationMins} min)</span>
@@ -1548,7 +1562,10 @@
 
             document.body.appendChild(modal);
             document.body.style.overflow = 'hidden';
-            requestAnimationFrame(() => modal.classList.add('active'));
+            requestAnimationFrame(() => {
+                modal.classList.add('active');
+                modal.querySelector('.session-modal').focus();
+            });
 
             const modalBody = modal.querySelector('.session-modal-body');
             const modalFade = modal.querySelector('.session-modal-fade');
@@ -1569,6 +1586,33 @@
             if (e.key === 'Escape') {
                 const modal = document.querySelector('.session-modal-overlay');
                 if (modal) closeSessionModal(modal);
+                return;
+            }
+            if (e.key !== 'Tab') return;
+
+            const dialog = document.querySelector('.session-modal-overlay .session-modal');
+            if (!dialog) return;
+            const focusable = [...dialog.querySelectorAll(
+                'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )].filter(element => !element.hidden && element.getAttribute('aria-hidden') !== 'true'
+                && element.getClientRects().length > 0);
+            if (!focusable.length) {
+                e.preventDefault();
+                dialog.focus();
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (document.activeElement === dialog) {
+                e.preventDefault();
+                (e.shiftKey ? last : first).focus();
+            } else if (e.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+                e.preventDefault();
+                first.focus();
             }
         }
 
