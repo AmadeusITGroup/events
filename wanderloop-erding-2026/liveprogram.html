@@ -6,9 +6,9 @@
     <title>Live program | Wanderloop Erding 2026</title>
     <link rel="stylesheet" href="../shared/styles-base.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="liveprogram.css?v=5">
+    <link rel="stylesheet" href="liveprogram.css?v=7">
     <script src="../shared/script-base.js" defer></script>
-    <script src="liveprogram.js?v=7" defer></script>
+    <script src="liveprogram.js?v=9" defer></script>
 </head>
 <body>
     <header class="live-hero">
@@ -19,9 +19,19 @@
     </header>
 
     <main class="container live-main">
-        <div class="live-summary" role="status" aria-live="polite" aria-atomic="true">
-            <h2 id="live-heading">Loading sessions...</h2>
-            <p id="live-description">The program updates automatically.</p>
+        <div class="live-summary">
+            <div class="live-summary-row">
+                <div role="status" aria-live="polite"><h2 id="live-heading">Loading sessions...</h2></div>
+                <nav class="live-navigation" aria-label="Browse sessions" hidden>
+                    <button id="live-previous" type="button" aria-label="Previous sessions" title="Previous sessions" disabled hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+                    </button>
+                    <button id="live-next" type="button" aria-label="Next sessions" title="Next sessions" disabled hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </nav>
+            </div>
+            <p id="live-description" role="status" aria-live="polite">The program updates automatically.</p>
         </div>
         <p id="live-error" role="alert" hidden></p>
         <div class="live-stage">
@@ -31,7 +41,7 @@
         <footer class="live-footer">
             <p class="live-note">Updates every 10s. <a id="full-program-link" href="program.html">Browse the full program</a>.</p>
             <p id="simulation-notice" hidden>
-                <span class="simulation-label">Simulation mode</span> Time is frozen.
+                <span id="simulation-label" class="simulation-label">Simulation mode</span> Time is frozen.
                 <a id="live-mode-link" href="liveprogram.html">Return to live time</a>
             </p>
         </footer>

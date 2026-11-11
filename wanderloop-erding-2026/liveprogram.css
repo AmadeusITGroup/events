@@ -75,6 +75,59 @@ body {
     margin-bottom: clamp(1rem, 1.2vw, 2rem);
 }
 
+.live-summary-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.live-navigation {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.25rem;
+}
+
+.live-navigation[hidden],
+.live-navigation button[hidden] {
+    display: none;
+}
+
+.live-navigation button {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.live-navigation button:hover:not(:disabled),
+.live-navigation button:focus-visible {
+    border-color: var(--secondary);
+    background: var(--bg-light);
+}
+
+.live-navigation button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.live-navigation button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.live-navigation svg {
+    width: 24px;
+    height: 24px;
+}
+
 .live-summary h2 {
     display: flex;
     align-items: center;

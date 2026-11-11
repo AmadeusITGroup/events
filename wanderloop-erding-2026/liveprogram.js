@@ -11,6 +11,9 @@
     const dateFormat = new Intl.DateTimeFormat('en-GB', {
         timeZone, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
     });
+    const dateKeyFormat = new Intl.DateTimeFormat('en-CA', {
+        timeZone, year: 'numeric', month: '2-digit', day: '2-digit'
+    });
     const roomsElement = document.getElementById('live-rooms');
     const stage = roomsElement.parentElement;
     const heading = document.getElementById('live-heading');
@@ -18,6 +21,11 @@
     const errorElement = document.getElementById('live-error');
     const clock = document.getElementById('live-clock');
     const fullProgramLink = document.getElementById('full-program-link');
+    const previousButton = document.getElementById('live-previous');
+    const nextButton = document.getElementById('live-next');
+    const navigationElement = previousButton.parentElement;
+    const simulationNotice = document.getElementById('simulation-notice');
+    const simulationLabel = document.getElementById('simulation-label');
     const feedbackDisabledTypes = new Set([
         'lunch', 'break', 'introduction', 'welcome', 'afterwork', 'networking booth', 'closing'
     ]);
@@ -25,12 +33,14 @@
     let renderedKey = null;
     let loading = false;
     let simulatedTime = null;
+    let browsingTime = null;
+    let browsingReferenceTime = null;
     let fitFrame = null;
     let showFeedback = false;
     let feedbackBaseUrl = '';
 
     const currentParams = new URLSearchParams(window.location.search);
-    const dateParam = currentParams.get('date');
+    const dateParam = currentParams.get('date')?.trim() || null;
     const hasSimpleView = [...currentParams.keys()].some(key => key.toLowerCase() === 'simpleview');
     const fullProgramParams = new URLSearchParams();
     if (dateParam) fullProgramParams.set('date', dateParam);
@@ -129,6 +139,47 @@
         const nextStart = Math.min(...schedule.filter(session => session.start > now).map(session => session.start));
         return { mode: 'next', sessions: schedule.filter(session => session.start === nextStart) };
     }
+
+    function browseSessions() {
+        if (!dateParam) return sessions;
+        return sessions.filter(session => {
+            const parts = Object.fromEntries(dateKeyFormat.formatToParts(session.start).map(part => [part.type, part.value]));
+            return `${parts.year}-${parts.month}-${parts.day}` === dateParam;
+        });
+    }
+
+    function navigationTimes(now) {
+        const starts = [...new Set(browseSessions().map(session => session.start))];
+        if (browsingTime !== null) {
+            return {
+                previous: starts.filter(start => start < browsingTime).at(-1),
+                next: starts.find(start => start > browsingTime)
+            };
+        }
+        const selected = selectSessions(sessions, now);
+        const anchor = selected.sessions.length
+            ? Math.max(...selected.sessions.map(session => session.start))
+            : Infinity;
+        return {
+            previous: starts.filter(start => start < anchor).at(-1),
+            next: starts.find(start => start > (selected.mode === 'running' ? now : anchor))
+        };
+    }
+
+    function browse(direction) {
+        if (sessions === null) return;
+        const now = browsingReferenceTime ?? simulatedTime ?? Date.now();
+        const target = navigationTimes(now)[direction];
+        if (target === undefined) return;
+        browsingReferenceTime = now;
+        browsingTime = target;
+        simulationLabel.textContent = 'Browse mode';
+        simulationNotice.hidden = false;
+        render();
+    }
+
+    previousButton.addEventListener('click', () => browse('previous'));
+    nextButton.addEventListener('click', () => browse('next'));
 
     function element(tag, text, className) {
         const node = document.createElement(tag);
@@ -311,7 +362,7 @@
     }
 
     function render() {
-        const now = simulatedTime ?? Date.now();
+        const now = browsingTime ?? simulatedTime ?? Date.now();
         clock.dateTime = new Date(now).toISOString();
         clock.replaceChildren(
             element('span', dateFormat.format(now)),
@@ -319,26 +370,46 @@
         );
         if (sessions === null) return;
 
-        const selected = selectSessions(sessions, now);
-        const key = JSON.stringify(selected);
+        const navigation = navigationTimes(now);
+        previousButton.disabled = navigation.previous === undefined;
+        nextButton.disabled = navigation.next === undefined;
+        previousButton.hidden = previousButton.disabled;
+        nextButton.hidden = nextButton.disabled;
+        navigationElement.hidden = previousButton.hidden && nextButton.hidden;
+        const selected = browsingTime === null
+            ? selectSessions(sessions, now)
+            : { mode: 'running', sessions: sessions.filter(session => session.start <= now && now < session.end) };
+        const key = JSON.stringify([selected, browsingTime, browsingReferenceTime]);
         if (key === renderedKey) return;
         renderedKey = key;
         roomsElement.replaceChildren();
 
         if (!selected.sessions.length) {
             description.hidden = false;
-            heading.textContent = sessions.length ? 'The event has ended' : 'No sessions scheduled';
-            description.textContent = sessions.length
+            heading.textContent = browsingTime !== null ? 'No sessions at this time'
+                : sessions.length ? 'The event has ended' : 'No sessions scheduled';
+            description.textContent = browsingTime !== null
+                ? `No sessions are scheduled on ${dateFormat.format(browsingTime)} at ${clockFormat.format(browsingTime)} (Erding time).`
+                : sessions.length
                 ? 'There are no more upcoming sessions. Thank you for joining us!'
                 : 'Please check back later for the program.';
             return;
         }
 
-        heading.textContent = selected.mode === 'running' ? 'On now' : 'Up next';
-        description.hidden = selected.mode === 'running';
-        description.textContent = selected.mode === 'running'
-            ? ''
-            : `No session is running now. Next sessions: ${dateFormat.format(selected.sessions[0].start)} at ${clockFormat.format(selected.sessions[0].start)}.`;
+        if (browsingTime !== null) {
+            const nextStart = browseSessions().find(session => session.start > browsingReferenceTime)?.start;
+            heading.textContent = browsingTime <= browsingReferenceTime
+                ? 'Previously'
+                : browsingTime === nextStart ? 'Up next' : 'Soon';
+            description.hidden = false;
+            description.textContent = `Sessions in progress on ${dateFormat.format(browsingTime)} at ${clockFormat.format(browsingTime)} (Erding time).`;
+        } else {
+            heading.textContent = selected.mode === 'running' ? 'On now' : 'Up next';
+            description.hidden = selected.mode === 'running';
+            description.textContent = selected.mode === 'running'
+                ? ''
+                : `No session is running now. Next sessions: ${dateFormat.format(selected.sessions[0].start)} at ${clockFormat.format(selected.sessions[0].start)}.`;
+        }
 
         const sortedSessions = [...selected.sessions].sort((left, right) =>
             left.room.localeCompare(right.room) || left.start - right.start);
@@ -375,6 +446,11 @@
             console.error('Unable to load the live program:', error);
             sessions = null;
             renderedKey = null;
+            previousButton.disabled = true;
+            nextButton.disabled = true;
+            previousButton.hidden = true;
+            nextButton.hidden = true;
+            navigationElement.hidden = true;
             roomsElement.replaceChildren();
             heading.textContent = 'Live program unavailable';
             description.hidden = false;
@@ -389,10 +465,10 @@
     try {
         const url = new URL(window.location.href);
         simulatedTime = parseSimulationTime(url.searchParams.get('now'));
+        url.searchParams.delete('now');
+        document.getElementById('live-mode-link').href = url.pathname + url.search + url.hash;
         if (simulatedTime !== null) {
-            document.getElementById('simulation-notice').hidden = false;
-            url.searchParams.delete('now');
-            document.getElementById('live-mode-link').href = url.pathname + url.search + url.hash;
+            simulationNotice.hidden = false;
         }
     } catch (error) {
         console.error('Unable to configure the live program clock:', error);
