@@ -148,6 +148,13 @@
         });
     }
 
+    function liveAnchor(now) {
+        const selected = selectSessions(sessions, now);
+        return selected.sessions.length
+            ? Math.max(...selected.sessions.map(session => session.start))
+            : Infinity;
+    }
+
     function navigationTimes(now) {
         const starts = [...new Set(browseSessions().map(session => session.start))];
         if (browsingTime !== null) {
@@ -157,9 +164,7 @@
             };
         }
         const selected = selectSessions(sessions, now);
-        const anchor = selected.sessions.length
-            ? Math.max(...selected.sessions.map(session => session.start))
-            : Infinity;
+        const anchor = liveAnchor(now);
         return {
             previous: starts.filter(start => start < anchor).at(-1),
             next: starts.find(start => start > (selected.mode === 'running' ? now : anchor))
@@ -171,10 +176,17 @@
         const now = browsingReferenceTime ?? simulatedTime ?? Date.now();
         const target = navigationTimes(now)[direction];
         if (target === undefined) return;
-        browsingReferenceTime = now;
-        browsingTime = target;
-        simulationLabel.textContent = 'Browse mode';
-        simulationNotice.hidden = false;
+        if (browsingTime !== null && target === liveAnchor(simulatedTime ?? Date.now())) {
+            browsingReferenceTime = null;
+            browsingTime = null;
+            simulationLabel.textContent = 'Simulation mode';
+            simulationNotice.hidden = simulatedTime === null;
+        } else {
+            browsingReferenceTime = now;
+            browsingTime = target;
+            simulationLabel.textContent = 'Browse mode';
+            simulationNotice.hidden = false;
+        }
         render();
     }
 
@@ -383,6 +395,7 @@
         if (key === renderedKey) return;
         renderedKey = key;
         roomsElement.replaceChildren();
+        heading.removeAttribute('data-status');
 
         if (!selected.sessions.length) {
             description.hidden = false;
@@ -398,12 +411,15 @@
 
         if (browsingTime !== null) {
             const nextStart = browseSessions().find(session => session.start > browsingReferenceTime)?.start;
-            heading.textContent = browsingTime <= browsingReferenceTime
-                ? 'Previously'
-                : browsingTime === nextStart ? 'Up next' : 'Soon';
+            const status = browsingTime <= browsingReferenceTime
+                ? 'previous'
+                : browsingTime === nextStart ? 'next' : 'soon';
+            heading.dataset.status = status;
+            heading.textContent = { previous: 'Previously', next: 'Up next', soon: 'Soon' }[status];
             description.hidden = false;
             description.textContent = `Sessions in progress on ${dateFormat.format(browsingTime)} at ${clockFormat.format(browsingTime)} (Erding time).`;
         } else {
+            heading.dataset.status = selected.mode === 'running' ? 'now' : 'next';
             heading.textContent = selected.mode === 'running' ? 'On now' : 'Up next';
             description.hidden = selected.mode === 'running';
             description.textContent = selected.mode === 'running'
@@ -452,6 +468,7 @@
             nextButton.hidden = true;
             navigationElement.hidden = true;
             roomsElement.replaceChildren();
+            heading.removeAttribute('data-status');
             heading.textContent = 'Live program unavailable';
             description.hidden = false;
             description.textContent = 'Please check your connection and reload, or wait for the automatic retry.';

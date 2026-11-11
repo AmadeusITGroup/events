@@ -142,8 +142,21 @@ body {
     height: 0.4em;
     flex-shrink: 0;
     border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 20px rgba(255, 88, 172, 0.5);
+    background: var(--status-color, #a9a0b7);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--status-color, #a9a0b7) 50%, transparent);
+}
+
+.live-summary h2[data-status="now"] {
+    --status-color: #ff58ac;
+}
+
+.live-summary h2[data-status="next"] {
+    --status-color: #b650ff;
+}
+
+.live-summary h2[data-status="soon"],
+.live-summary h2[data-status="previous"] {
+    --status-color: #3a8bff;
 }
 
 .live-summary p {
