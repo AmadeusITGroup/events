@@ -823,7 +823,7 @@
     "ID": "WL136",
     "Proposal title": "Factory",
     "Session type": { "en": "Networking booth" },
-    "Track": null,
+    "Track": { "en": "Platforms" },
     "Tags": null,
     "Description": "",
     "Speaker names": ["Harley Chen", "Dan Trigwell", "Hardeep Bath"],
