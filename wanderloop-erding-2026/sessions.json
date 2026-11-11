@@ -723,21 +723,6 @@
     "From which Amadeus site do you plan to present?": "Erding, Germany"
   },
   {
-    "ID": "WL127",
-    "Proposal title": "MongoDB",
-    "Session type": { "en": "Networking booth" },
-    "Track": {
-      "en": "AI platforms at scale"
-    },
-    "Tags": null,
-    "Description": "",
-    "Speaker names": ["Thomas Scott"],
-    "Room": { "en": "Restaurant" },
-    "Start": "2026-11-11T16:45:00+01:00",
-    "End": "2026-11-11T17:45:00+01:00",
-    "From which Amadeus site do you plan to present?": "Erding, Germany"
-  },
-  {
     "ID": "WL128",
     "Proposal title": "Scality",
     "Session type": { "en": "Networking booth" },
@@ -803,6 +788,32 @@
     "Tags": null,
     "Description": "Explore how Now Assist from ServiceNow brings AI-assisted change management capabilities to Amadeus operations. Learn how AI helps assess change risk, suggest remediation steps, and accelerate change approval workflows.",
     "Speaker names": ["Carsten Schinzer", "Thomas Stoeckl"],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T16:45:00+01:00",
+    "End": "2026-11-11T17:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL134",
+    "Proposal title": "ACTI-X (Advanced Cyber Threat Information eXchange)",
+    "Session type": { "en": "Networking booth" },
+    "Track": { "en": "AI platforms at scale" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Yash Agarwal", "Alejandro Cornejo"],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T16:45:00+01:00",
+    "End": "2026-11-11T17:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL135",
+    "Proposal title": "AI-assisted incident management including demo",
+    "Session type": { "en": "Networking booth" },
+    "Track": { "en": "AIOps" },
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Rahul Agrawal", "Fritz Reichmann"],
     "Room": { "en": "Restaurant" },
     "Start": "2026-11-11T16:45:00+01:00",
     "End": "2026-11-11T17:45:00+01:00",
