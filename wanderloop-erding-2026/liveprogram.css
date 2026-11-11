@@ -606,10 +606,11 @@ body {
     letter-spacing: inherit;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 850px) {
     .live-eyebrow {
         grid-column: 1;
         grid-row: 1;
+        font-size: clamp(2.5rem, 3vw, 4.5rem);
     }
 
     .live-clock {
