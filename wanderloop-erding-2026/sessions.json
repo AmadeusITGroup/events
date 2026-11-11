@@ -818,5 +818,18 @@
     "Start": "2026-11-11T16:45:00+01:00",
     "End": "2026-11-11T17:45:00+01:00",
     "From which Amadeus site do you plan to present?": "Erding, Germany"
+  },
+  {
+    "ID": "WL136",
+    "Proposal title": "Factory",
+    "Session type": { "en": "Networking booth" },
+    "Track": null,
+    "Tags": null,
+    "Description": "",
+    "Speaker names": ["Harley Chen", "Dan Trigwell", "Hardeep Bath"],
+    "Room": { "en": "Restaurant" },
+    "Start": "2026-11-11T16:45:00+01:00",
+    "End": "2026-11-11T17:45:00+01:00",
+    "From which Amadeus site do you plan to present?": "Erding, Germany"
   }
 ]
